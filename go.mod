@@ -1,4 +1,4 @@
-module github.com/chrede88/qubtTemplate
+module github.com/JasonWStewart/ruffthe.dog
 
 go 1.25.6
 
