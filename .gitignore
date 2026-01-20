@@ -1,7 +1,27 @@
-# Hugo stuff
+# Hugo
 .hugo_build.lock
-**/resources/_gen/
-/public
+public/
+resources/
+resources/_gen/
+hugo_cache/
+resources/_gen/
 
-# Apple stuff
+# Static/site build caches
+.cache/
+.tmp/
+
+# Node / JS
+node_modules/
+npm-debug.log*
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# OS / editors
 .DS_Store
+.vscode/
+.idea/
+*.log
+
+# Env / secrets
+.env
