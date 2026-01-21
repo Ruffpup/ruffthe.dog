@@ -1,5 +1,5 @@
 ---
-title: Electro Play 101: Power, Sensation & Safety
+title: Electro Play 101 Power, Sensation & Safety
 summary: Curious about electro play and ready to sniff out something new? 🐾 Electro Play 101 is an introductory, demo-focused class designed to explore electrical sensation play in a way that centers safety, consent, communication, and curiosity.
 
 date: 2026-01-21
