@@ -9,7 +9,7 @@ caption: "Image caption :violet wand:"
 authors:
   - Ruff: ruff_face.png
 ---
-Class Length: 60 minutes
+**Class Length:** 60 minutes
 
 Curious about electro play and ready to sniff out something new? 🐾 Electro Play 101 is an introductory, demo-focused class designed to explore electrical sensation play in a way that centers safety, consent, communication, and curiosity.
 
@@ -18,20 +18,19 @@ This class breaks down how different electro devices create sensation, how pups 
 Whether you’re a curious pup, a handler, or a kinkster looking to expand your toolbox, this class will help you build confidence and understanding before plugging anything in.
 
 What we’ll cover:
-•	⚡ What electro play is (and isn’t)
-•	⚡ Basic electrical concepts in pup-friendly language
-•	⚡ Safety fundamentals and risk-aware play
-•	⚡ Equipment overview and demonstrations:
-o	Electro boxes (E-stim)
-o	Violet wands
-o	Shock collars
-•	⚡ Negotiation, consent, and aftercare for electro scenes
-•	⚡ Time for questions during demos
+- ⚡ What electro play is (and isn’t)
+-	⚡ Basic electrical concepts in pup-friendly language
+-	⚡ Safety fundamentals and risk-aware play
+-	⚡ Equipment overview and demonstrations:
+  - o	Electro boxes (E-stim)
+  - o	Violet wands
+  - o	Shock collars
+-	⚡ Negotiation, consent, and aftercare for electro scenes
+-	⚡ Time for questions during demos
 
 No prior experience required. This is a discussion- and demonstration-based class. Participation is always optional—watching, learning, and wagging are welcome.
  
-**Heading**
-Medical & Safety Disclaimer
+**Medical & Safety Disclaimer**
 
 Electro play carries inherent risks and is not suitable for everyone. Participants and observers should be aware that electro play may be unsafe for individuals with pacemakers, implanted medical devices, seizure disorders, heart conditions, neuropathy, nerve damage, or who are pregnant. This class is for educational purposes only and does not constitute medical advice.
 
