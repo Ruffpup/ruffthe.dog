@@ -1,7 +1,7 @@
 ---
 title: How Rediscovering My Pup Self Helped Save Me
 #subtitle: "Keep your kit clean, safe, and ready for play ⚡"
-summary: "A reflection on rediscovering my pup identity, embracing pup play, and how reconnecting to Ruff helped me heal and thrive.
+summary: "A reflection on rediscovering my pup identity, embracing pup play, and how reconnecting to Ruff helped me heal and thrive."
 date: 2026-01-21 
 cardimage: blog1_card.jpeg
 featureimage: blog1.jpeg
