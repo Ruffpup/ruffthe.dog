@@ -32,8 +32,6 @@ As I reflected on my journey as a kink practitioner, I kept coming back to somet
 That reflection led me to a hard but honest realization:  
 I needed something from my past to hold onto in order to survive the present.
 
----
-
 ## Rediscovering Ruff
 
 When I stepped fully back into pup space, something familiar clicked into place.
@@ -47,8 +45,6 @@ As a pup, I didn’t have to justify my existence. I didn’t have to perform co
 
 That permission changed everything.
 
----
-
 ## The Basics I Forgot—and Relearned
 
 As I reconnected with Ruff, I also reconnected with some of the most basic principles of kink: **consent, negotiation, aftercare, and trust**. But this time, those skills weren’t about finding a partner.
@@ -61,8 +57,6 @@ I had to check in with myself. Take self-care days when I felt overloaded. And m
 
 Reconnecting with Ruff helped me embody those principles again and step into a headspace rooted in curiosity, adventure, and care. It allowed me to show up **#UnapologeticallyPuppy**—not as an escape, but as a way to thrive.
 
----
-
 ## Community, Connection, and Care
 
 Ruff also reconnected me to community.
@@ -72,8 +66,6 @@ I attended pup events, furry conventions, and even traveled to the UK, where I d
 Pup spaces—when done well—are built on care, humor, accountability, and presence. I found people who asked how I was *really* doing. People who celebrated progress, respected boundaries, and understood that vulnerability isn’t a flaw.
 
 It’s a form of trust.
-
----
 
 ## Where I Am Now
 
