@@ -1,5 +1,5 @@
 ---
-title: "Pupplay 101: #UnapologeticallyPuppy"
+title: "Pup play 101: #UnapologeticallyPuppy"
 subtitle: "More Than a Kink — A Way Back to Play"
 summary: "Pup Play 101: #UnapologeticallyPuppy is an introduction designed for the curious, the cautious, the experienced, and the quietly yearning. This class goes beyond “what is pup play?” and explores **why so many people find healing, connection, and grounding through pup headspace."
 date: 2026-01-26
