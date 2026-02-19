@@ -1,5 +1,5 @@
 ---
-title: "ealing Through Puppy Play"
+title: "Healing Through Puppy Play"
 #subtitle: ""
 summary: "How puppy play became regulation, belonging, and identity reclamation after divorce."
 date: 2026-02-19 
