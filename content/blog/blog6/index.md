@@ -10,98 +10,42 @@ caption: " "
 authors:
   - Ruff: ruff_face.png
 ---
-# Healing Through Puppy Play
+# 🐾 You Already Belong
 
-When people hear “puppy play,” they usually assume it is about kink. And yes, it can live in that world. But for me, puppy play became something much bigger than that. It became a nervous system reset. It became a doorway into community. It became a way back to myself.
+## A Moment in London
 
-After my divorce, I found myself asking a question that felt both simple and terrifying. Who am I when I am not someone’s husband?
+A couple weeks ago in London, my Alpha and I found ourselves in a moment that’s been sitting with me ever since. We were at a pup event, the kind where the room is full of energy, gear everywhere, tails wagging, and packs forming and reforming in that kind of controlled chaos that somehow still feels like home.
 
-Twenty years is a long time to build an identity around partnership. When that structure shifts, even in healthy ways, something inside you has to reorganize. I was functioning. I was working. I was traveling constantly. On paper, I looked fine.
+And then, off to the side, there was a pup.
 
-Inside, I felt untethered.
+You could tell he had done everything “right.” Full pup gear, harness, the whole look dialed in. Honestly, he looked adorable, like he had been waiting for this moment for a long time. But he wasn’t moving like the rest of the room. He was still, watching, trying to figure it all out.
 
-Therapy helped me understand what was happening. It gave language to anxiety, attachment activation, and the way my body holds stress. But understanding something intellectually is not the same as feeling safe in your body.
+You could feel it before he even said anything, that quiet question so many of us have had at some point: *what do I do, and how am I supposed to act?*
 
-That is where puppy play surprised me.
+## A Simple Reminder
 
-When I drop into pup space, my breathing changes. My shoulders lower. The constant background hum of adult responsibility softens. Play interrupts the spiral. Movement grounds me. Ritual anchors me.
+Before I could even fully process it, Kuma had already stepped in. That’s something I really admire about him, he doesn’t hesitate when he sees someone standing just outside the pack. He walked over, gently pulled the pup out of the crowd, and just met him where he was. No pressure, no expectations, just presence.
 
-Even something as simple as packing my gear first when I travel is not about planning a scene. It is about taking myself with me. It is a reminder that joy is allowed to come too.
+And then he said something that honestly landed just as much for me as it did for that pup: *you’re already part of this, you’re a pup, that’s enough.* It was such a simple thing to say, but it cut through all the noise. This isn’t a performance, there isn’t some invisible checklist you have to complete before you’re allowed to belong. The moment you show up, you’re already in it, because we’re connected through our kink, through our energy, and through the simple fact that we chose to be in that space together.
 
-## The First Time I Felt It
+## Stepping Into the Pack
 
-The first time I really understood this was at my first International Mr. Leather puppy mosh.
+After a few minutes, Kuma brought him back into the group and started making introductions. Nothing forced, just easy connections, names, pats, a bit of playful energy. And you could actually see the shift happen in real time. The tension dropped, his body loosened, and that sense of being on the outside started to fade. He wasn’t scanning the room anymore trying to figure it out. He was in it, laughing, engaging, letting himself have fun. It was such a small moment on the surface, but it carried so much weight.
 
-I did not know anyone.
+## Carrying It Forward
 
-My partner and I had barely explored handler and pup dynamics. We were curious but new. That space felt big and loud and full of energy, and I remember wondering if I would feel out of place.
+That experience has stayed with me, especially as I’ve been traveling more and stepping into different pup communities around the world. Even now, I still catch myself having those same thoughts sometimes, wondering if I’m doing it right, if I fit, if a space is really mine.
 
-So we volunteered to help set up.
+Every time, I come back to a couple of simple truths. If you’re a pup, you belong. There isn’t a higher bar to clear, no unspoken test to pass. You don’t need perfect gear or the right connections. If you feel that pull and you show up as yourself, you’re already part of it.
 
-Folding mats. Moving gear. Simple work. That is how we met the Phoenix boys of leather. At the time they were just friendly faces and easy conversation that made a massive room feel smaller. Years later, many of those men are still in my life. They check in. They celebrate wins. They show up.
+And it’s called pup play, not pup serious. It’s easy to overthink and feel like you need to get everything right, but this space was never meant to be rigid. It’s meant to be playful, curious, and a little chaotic in the best way. It’s okay to be awkward, to not know what you’re doing, to take small risks and let yourself be seen. That’s how connection happens, and it’s how the community grows.
 
-That night, when the mosh started, something shifted in me.
+As I’m writing this, I’m sitting at the airport getting ready to head to another new country, India, and I can feel that mix of excitement and uncertainty again. This trip feels different because I know LGBT visibility and rights aren’t as prominent there, and I’ll need to be more aware of how I carry myself. Ruff doesn’t disappear, but he might show up more quietly, more observant, more tuned in to the space around him.
 
-You could feel the pups’ energy coming off one another. It was playful but not chaotic. It felt electric and safe at the same time. There was a joyful moment where the “mailman” came in delivering packages of toys for the pups to rip open and claim. Watching grown men drop into that kind of uninhibited joy did something to me. It cracked open the idea that adulthood has to be heavy.
+I don’t know yet what the pup community looks like there, or how visible it is, but I’m excited to find out. To listen, to notice, and to connect in whatever ways exist. Because this community isn’t limited to one place or one kind of visibility. It exists in small moments too, in shared understanding, in simply recognizing one another.
 
-But the moment that stays with me was afterward.
+That night in London didn’t just change that pup’s experience, it grounded something in me that I want to carry forward wherever I go. You don’t earn your way into the pack. You arrive, and you’re already in it.
 
-When the space softened. When pups leaned into handlers. When friends held each other as everyone came back into themselves. I remember standing there, breathing, feeling more grounded than I had in a long time.
+And if you ever find yourself standing on the edge of the room, wondering if you belong, I hope you remember that.
 
-I did not feel exposed. I did not feel performative. I felt connected.
-
-Connected to my partner. Connected to new friends. Connected to my own body.
-
-That was when I realized puppy play was not about escape. It was about belonging.
-
-## Belonging in Action
-
-Years later, I saw that same belonging offered to someone else.
-
-This past weekend at London Collared, I noticed a pup sitting alone in the corner. His body language was familiar. Tight shoulders. Overwhelmed eyes. The kind of stillness that sometimes hides an anxiety spike.
-
-Before I could even move, Kuma saw it too.
-
-He went over calmly. No pressure. No spectacle. Just presence. He helped that pup understand something simple and powerful. This is your community. You belong here. There is nothing expected of you. No certain way you have to behave. No performance required.
-
-Then he introduced him to a few other pups. Small bridges. Gentle connections.
-
-By the end of the night, that same pup was smiling.
-
-Kuma and I walked away with a new friend. Pup Kaos.
-
-What struck me was not just that someone felt better. It was how it happened. Not through intensity. Not through dominance. Through reassurance. Through normalization. Through inclusion.
-
-That is healing too.
-
-## Integration
-
-Therapy helped me understand my patterns. Puppy play gave me a place to practice new ones.
-
-I practiced allowing care. I practiced being playful without earning it. I practiced sitting with activation instead of fighting it. I practiced the idea that love in parallel is not love diminished.
-
-Over time, that practice became integration.
-
-Montreal taught me freedom. London taught me affirmation. And in Sydney, something finally clicked into place.
-
-On my birthday in Sydney, introducing myself as Ruff felt natural. Not rebellious. Not performative. Just honest.
-
-I was not trying to become a pup. I already was one.
-
-Puppy play did not create that identity. It helped me reclaim it.
-
-Healing, for me, has not looked like shrinking parts of myself to make others comfortable. It has looked like letting those parts breathe. It has looked like recognizing that joy is not frivolous. It is regulation. It is connection. It is resilience.
-
-Healing through puppy play is not about replacing therapy. It is about embodying what therapy teaches. It is about building spaces where someone sitting alone in the corner learns they do not have to earn their place.
-
-Healing does not always look quiet and serious.  
-Sometimes it looks like laughter echoing across a mosh mat.  
-Sometimes it looks like chosen family from Phoenix who still text years later.  
-Sometimes it looks like a pup in London realizing he belongs.  
-Sometimes it looks like a man in Sydney finally introducing himself without hesitation.
-
-And sometimes it looks like a wagging tail that reminds you that you are allowed to feel safe in your own skin.
-
-If I have learned anything on this journey, it is that healing and leadership are not separate things. The more grounded we become in ourselves, the safer we make the room for someone else. The more secure we feel in our own identity, the more generous we can be with belonging.
-
-For me, puppy play has never been about performance. It has been about presence. And if I can help create spaces where one more pup feels less alone, less anxious, and more at home in their own skin, then that is work worth doing.
+Because you do.
