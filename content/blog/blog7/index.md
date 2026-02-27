@@ -1,12 +1,12 @@
 ---
-title: "You Already Belong"
+title: "Healing Through Puppy Play"
 #subtitle: ""
-summary: "From London to India, a reminder: if you’re a pup, you already belong. Show up, connect, and let yourself play wherever you are."
-date: 2026-02-27 
-cardimage: blog7_card.jpeg
-featureimage: blog7.jpeg
+summary: "How puppy play became regulation, belonging, and identity reclamation after divorce."
+date: 2026-02-19 
+cardimage: blog6_card.jpeg
+featureimage: blog6.jpeg
 caption: " "
-#alt: "a picture of a pups at a pub in London."
+alt: "a picture of a man in a pup hood with rainbow glasses"
 authors:
   - Ruff: ruff_face.png
 ---
