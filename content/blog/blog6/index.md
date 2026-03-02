@@ -10,6 +10,7 @@ caption: " "
 authors:
   - Ruff: ruff_face.png
 ---
+
 ## A Moment in London
 
 A couple weeks ago in London, my Alpha and I found ourselves in a moment that’s been sitting with me ever since. We were at a pup event, the kind where the room is full of energy, gear everywhere, tails wagging, and packs forming and reforming in that kind of controlled chaos that somehow still feels like home.
