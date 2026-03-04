@@ -2,7 +2,7 @@
 title: "Seen Without Saying a Word"
 #subtitle: "The connenction through a collar"
 summary: "Wearing my collar in India revealed connection, visibility, and grounding through Alpha"
-date: 2026-03-05 
+date: 2026-03-04 
 cardimage: blog8_card.jpeg
 featureimage: blog8.jpeg
 caption: " "
