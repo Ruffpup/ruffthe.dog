@@ -23,8 +23,8 @@ This was especially important in giving me permission in London to explore and f
 
 ## Gear isn’t a Costume, it’s permission
 
-For a long time, I thought pup gear was something you put on after you arrived—after the hotel check-in, after the social anxiety settled, after you felt safe enough. Now I understand that packing it first is how I create safety in advance.My gear isn’t about looking like a pup.It’s about feeling like myself and giving me that familiarity my nervous system needs to process new experiences.
-When I open my bag in a new city and see my hood and tail, something in my nervous system exhales. Even if I never wear it publicly. Even if it stays folded the entire trip. Its presence is enough.It says: You are allowed to take up space as you are. You don’t need permission.
+For a long time, I thought pup gear was something you put on after you arrived—after the hotel check-in, after the social anxiety settled, after you felt safe enough. Now I understand that packing it first is how I create safety in advance. My gear isn’t about looking like a pup. It’s about feeling like myself and giving me that familiarity my nervous system needs to process new experiences.
+When I open my bag in a new city and see my hood and tail, something in my nervous system exhales. Even if I never wear it publicly. Even if it stays folded the entire trip. Its presence is enough. It says: You are allowed to take up space as you are. You don’t need permission.
 Travel already has a way of making us question our identity. Who am I here, what version of myself is welcome, how visible do I want to be? By packing my pup gear, I have the answer to those questions. It doesn’t always mean I’m going out, or playing, but rather It means I refuse to leave the most regulated, joyful version of myself behind just because I crossed a border. Sometimes the gear comes out late at night in a hotel room, after a long day. Sometimes it never leaves the bag. Both are valid. What matters is that I chose to bring it. I chose to honor that part of myself instead of treating it like an accessory I could live without.
 
 ## Carrying Ruff With Me
