@@ -10,7 +10,7 @@ alt: "a picture of a man in a pup hood with a heavy steel chain collar"
 authors:
   - Ruff: ruff_face.png
 ---
-#I didn’t expect the collar to be the thing people noticed first in India.
+## I didn’t expect the collar to be the thing people noticed first in India.
 
 But it was impossible to miss.
 
