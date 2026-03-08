@@ -2,7 +2,7 @@
 title: "A Night Wagging Through London"
 #subtitle: "The connenction through a collar"
 summary: "One night in London: pups, connection, and the kind of adventure that lasts until sunrise."
-date: 2026-03-0408 
+date: 2026-03-08
 cardimage: blog9_card.jpeg
 featureimage: blog9.jpeg
 caption: " "
