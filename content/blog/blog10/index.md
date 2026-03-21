@@ -1,7 +1,7 @@
 ---
 title: "At The Edge of What Comes Next"
 #subtitle: "The connenction through a collar"
-summary: "OFacing transplant, still chasing connection, travel, and the life that makes me feel alive."
+summary: "Facing transplant, still chasing connection, travel, and the life that makes me feel alive."
 date: 2026-03-21
 cardimage: blog10_card.jpeg
 featureimage: blog10.jpeg
