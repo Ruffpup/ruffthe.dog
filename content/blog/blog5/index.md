@@ -5,7 +5,8 @@ summary: "Do you own a pup name? Reflections on identity, consent, and choosing 
 date: 2026-02-12 
 cardimage: blog5_card.jpeg
 featureimage: blog5.jpeg
-caption: " "
+#caption: " "
+slug: 'who-owns-a-pup-name'
 #alt: "a picture of a suitcase with a silicone tail and neoprene pup hood"
 authors:
   - Ruff: ruff_face.png

@@ -5,7 +5,8 @@ summary: "Facing transplant, still chasing connection, travel, and the life that
 date: 2026-03-21
 cardimage: blog10_card.jpeg
 featureimage: blog10.jpeg
-caption: " "
+#caption: " "
+slug: 'at-the-edge-of-what-comes-next'
 #alt: "Picture of Steel Yard in london with shirtless guys dancing. Beefmince is on the screen in background"
 authors:
   - Ruff: ruff_face.png

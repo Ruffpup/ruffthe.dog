@@ -5,7 +5,8 @@ summary: "Why I pack my pup gear first: travel brings anxiety, ritual brings cal
 date: 2026-02-05 
 cardimage: blog4_card.jpeg
 featureimage: blog4.jpeg
-caption: " "
+#caption: " "
+slug: 'pup-gear-first'
 alt: "a picture of a suitcase with a silicone tail and neoprene pup hood"
 authors:
   - Ruff: ruff_face.png

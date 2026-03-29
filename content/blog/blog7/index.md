@@ -5,7 +5,8 @@ summary: "How puppy play became regulation, belonging, and identity reclamation 
 date: 2026-02-19 
 cardimage: blog6_card.jpeg
 featureimage: blog6.jpeg
-caption: " "
+#caption: " "
+slug: 'how-puppy-play-became-regulation-belinging-and-identity'
 alt: "a picture of a man in a pup hood with rainbow glasses"
 authors:
   - Ruff: ruff_face.png

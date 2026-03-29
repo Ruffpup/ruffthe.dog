@@ -6,6 +6,7 @@ date: 2026-03-27
 cardimage: photo8_card.jpeg
 featureimage: photo8.jpeg
 #caption: "Image caption :tada:"
+slug: 'carry-on-pup'
 authors:
   - Ruff: ruff_face.png
 ---

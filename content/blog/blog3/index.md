@@ -5,7 +5,8 @@ summary: "Puppy play isn’t a shopping list. It’s a state of being rooted in 
 date: 2026-01-31 
 cardimage: blog3_card.jpeg
 featureimage: blog3.jpeg
-caption: " "
+#caption: " "
+slug: 'what-gear-do-you-need-to-be-a-puppy'
 #alt: "a picture of a man in an orange and yellow neoprene hood"
 authors:
   - Ruff: ruff_face.png

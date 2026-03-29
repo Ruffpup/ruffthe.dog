@@ -5,6 +5,7 @@ date: 2026-01-21
 cardimage: photo3_card.jpeg
 featureimage: photo3.jpeg
 #caption: "Image caption :tada:"
+slug: 'boardroom-bdsm'
 authors:
   - Ruff: ruff_face.png
 ---

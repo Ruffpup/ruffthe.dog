@@ -6,6 +6,7 @@ date: 2026-01-31
 cardimage: photo5_card.jpeg
 featureimage: photo5.jpeg
 #caption: "Image caption :tada:"
+slug: 'mumification-101'
 authors:
   - Ruff: ruff_face.png
 ---

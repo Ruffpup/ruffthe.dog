@@ -5,7 +5,8 @@ summary: "A reflection on rediscovering my pup identity, embracing pup play, and
 date: 2026-01-21 
 cardimage: blog1_card.jpeg
 featureimage: blog1.jpeg
-caption: " "
+#caption: " "
+slug: 'how-rediscovering-my-pup-self-helped-save-me'
 alt: "a picture of a man in an orange and yellow neoprene hood"
 authors:
   - Ruff: ruff_face.png

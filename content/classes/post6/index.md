@@ -6,6 +6,7 @@ date: 2026-03-26
 cardimage: photo6_card.jpeg
 featureimage: photo6.jpeg
 #caption: "Image caption :tada:"
+slug: 'knotty-pup-rope-basics'
 authors:
   - Ruff: ruff_face.png
 ---

@@ -5,7 +5,8 @@ summary: "One night in London: pups, connection, and the kind of adventure that 
 date: 2026-03-08
 cardimage: blog9_card.jpeg
 featureimage: blog9.jpeg
-caption: " "
+#caption: " "
+slug: 'a-night-wagging-through-london'
 alt: "Picture of Steel Yard in london with shirtless guys dancing. Beefmince is on the screen in background"
 authors:
   - Ruff: ruff_face.png

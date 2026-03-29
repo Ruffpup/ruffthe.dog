@@ -6,6 +6,7 @@ date: 2026-03-26
 cardimage: photo7_card.jpeg
 featureimage: photo7.jpeg
 #caption: "Image caption :tada:"
+slug: 'safety-in-kink'
 authors:
   - Ruff: ruff_face.png
 ---

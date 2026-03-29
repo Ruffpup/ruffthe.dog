@@ -5,7 +5,8 @@ summary: "Wearing my collar in India revealed connection, visibility, and ground
 date: 2026-03-04 
 cardimage: blog8_card.jpeg
 featureimage: blog8.jpeg
-caption: " "
+#caption: " "
+slug: 'seen-without-saying-a-word'
 alt: "a picture of a man in a pup hood with a heavy steel chain collar"
 authors:
   - Ruff: ruff_face.png

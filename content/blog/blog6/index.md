@@ -5,7 +5,8 @@ summary: "From London to India, a reminder: if you’re a pup, you already belon
 date: 2026-02-27 
 cardimage: blog7_card.jpeg
 featureimage: blog7.jpeg
-caption: " "
+#caption: " "
+slug: 'you-already-belong'
 #alt: "a picture of a pups at a pub in London."
 authors:
   - Ruff: ruff_face.png

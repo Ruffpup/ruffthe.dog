@@ -5,7 +5,8 @@ summary: "A hands-on, shame-free workshop on cleaning and maintaining pup gear. 
 date: 2026-01-20
 cardimage: photo1_card.jpg
 featureimage: photo1.jpg
-caption: " "
+#caption: " "
+slug: 'pup-gear-care-101'
 alt: "A black leather flogger lying on a red surface next to two black X shapes made of tape"
 authors:
   - Ruff: ruff_face.png

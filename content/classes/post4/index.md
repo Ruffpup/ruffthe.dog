@@ -6,6 +6,7 @@ date: 2026-01-26
 cardimage: photo4_card.jpeg
 featureimage: photo4.jpeg
 #caption: "Image caption :tada:"
+slug: 'pup-play-101-unapologeticallypuppy'
 authors:
   - Ruff: ruff_face.png
 ---

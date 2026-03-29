@@ -1,11 +1,12 @@
 ---
-title: "#Unappolpgetically Puppy"
+title: "#Unappologetically Puppy"
 #subtitle: "Keep your kit clean, safe, and ready for play ⚡"
 summary: "#UnapologeticallyPuppy is about choosing authenticity, play, and embodiment over performance and permission. I reflect on rediscovering my pup self, how puppy play helped me heal, and why intentional joy and presence matter—without apology."
 date: 2026-01-26 
 cardimage: blog2_card.jpeg
 featureimage: blog2.jpeg
-caption: " "
+#caption: " "
+slug: 'unappologetically-puppy'
 alt: "a picture of a man in an orange and yellow neoprene hood"
 authors:
   - Ruff: ruff_face.png

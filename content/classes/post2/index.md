@@ -6,6 +6,7 @@ date: 2026-01-21
 cardimage: photo2_card.jpeg
 featureimage: photo2.jpeg
 caption: "Image caption :violet wand:"
+slug: 'electro-play-101'
 authors:
   - Ruff: ruff_face.png
 ---
