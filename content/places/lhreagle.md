@@ -58,17 +58,6 @@ One of the things I love most about traveling between communities is how easily 
 
 Moments like that are part of the adventure.
 
-## Stay connected
-
-🌐 **Website**  
-https://ruffthe.dog
-
-📸 **Instagram**  
-https://instagram.com/ruffthedog82
-
-👻 **Snapchat**  
-ruffninja82
-
 ## One last thing
 
 If you see me again at Eagle London or somewhere else in the city, come say hi.

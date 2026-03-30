@@ -57,17 +57,6 @@ Sometimes all it takes is a conversation.
 
 Or a slightly unusual handshake.
 
-## Stay connected
-
-🌐 **Website**  
-https://ruffthe.dog
-
-📸 **Instagram**  
-https://instagram.com/ruffthedog82
-
-👻 **Snapchat**  
-ruffninja82
-
 ## One more thing
 
 If someone asks how you got my contact info…

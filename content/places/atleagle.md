@@ -44,19 +44,6 @@ No battery.
 No tracking.  
 Just a tiny piece of tech and a good conversation starter.
 
-## Let’s stay connected
-
-If we met tonight, I’d love to hear from you.
-
-🌐 **Website**  
-https://ruffthe.dog
-
-📸 **Instagram**  
-https://instagram.com/ruffthedog82/
-
-👻 **Snapchat**  
-ruffninja82
-
 ## One more thing
 
 If you see me around the Eagle again, come say hi.

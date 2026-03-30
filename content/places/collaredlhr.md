@@ -56,17 +56,6 @@ One of the things I love most about the London scene is how easy it is to meet n
 
 Moments like this are part of that.
 
-## Stay connected
-
-🌐 **Website**  
-https://ruffthe.dog
-
-📸 **Instagram**  
-https://instagram.com/ruffthedog82
-
-👻 **Snapchat**  
-ruffninja82
-
 ## One last thing
 
 If you see me again at Collared or somewhere else in London, come say hi.

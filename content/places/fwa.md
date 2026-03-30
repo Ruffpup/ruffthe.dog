@@ -68,17 +68,6 @@ Sometimes they just turn into a great story.
 
 Either way, I’m glad you’re part of it.
 
-## Stay connected
-
-🌐 **Website**  
-https://ruffthe.dog
-
-📸 **Instagram**  
-https://instagram.com/ruffthedog82
-
-👻 **Snapchat**  
-ruffninja82
-
 ## One last thing
 
 If you see me again somewhere around the con, come say hi.

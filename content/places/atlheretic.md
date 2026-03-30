@@ -50,17 +50,6 @@ I’m glad you said hi.
 
 Whether we talked on the dance floor, on the patio, or somewhere between songs, I’m always happy when a random interaction turns into a connection.
 
-## Stay connected
-
-🌐 **Website**  
-https://ruffthe.dog
-
-📸 **Instagram**  
-https://instagram.com/ruffthedog82
-
-👻 **Snapchat**  
-ruffninja82
-
 ## One last thing
 
 If you see me again at The Heretic, come say hi.

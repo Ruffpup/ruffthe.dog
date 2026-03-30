@@ -9,13 +9,56 @@ bio: true
 icon: ":dog:"
 slug: 'collared-man'
 ---
+# You met Ruff at Collared Manchester 🐾
 
-Ruff is an Atlanta-based pup, kink educator, and community builder with more than two decades of lived experience in kink, leather, and pup play. As the Former Rocky Mountain Leather Sir (2012), Ruff carries a deep respect for leather history, protocol, and tradition — while also embracing the evolution of kink toward more intentional, consent-forward, and emotionally aware forms of power exchange. His approach bridges old-guard leather values with modern conversations around communication, autonomy, and care, creating a style of leadership that is both rooted and responsive.
+Well hello there.
 
-As a beta pup to his Alpha, Kuma, Ruff’s identity is shaped by service, curiosity, and emotional presence. He believes that submission is not about shrinking, but about showing up with intention — listening deeply, offering support, and remaining open to growth. Ruff’s pup style blends playful, curious energy with steady, grounded leadership, allowing him to meet people where they are while still holding space for learning, accountability, and exploration. Whether someone is brand new to pup play or deeply embedded in the community, Ruff works to create environments where pups feel safe to ask questions, make mistakes, and discover what authenticity looks like for them.
+If you’re reading this, something interesting just happened.
 
-Education and mentorship sit at the heart of Ruff’s work. He is especially passionate about gear care, pup culture, and community sustainability, believing that taking care of our gear, our bodies, and each other is a form of respect — not just for ourselves, but for the communities we inhabit. Through workshops, pup teas, and events, Ruff focuses on making learning approachable, practical, and accessible, removing unnecessary gatekeeping while still honoring the depth and responsibility that kink carries.
+You tapped your phone to my hand and ended up here.
 
-Known for leading with empathy, humor, and honesty, Ruff teaches from lived experience rather than theory alone. He values conversations that are real, nuanced, and sometimes imperfect, and he believes that the strongest kink communities are built when knowledge is shared generously and connections are formed with intention, care, and mutual respect.
+Yes, the chip is real.  
+And yes, most people check their phone and then stare at my hand for a second before believing it.
 
-At his core, Ruff is simply a pup who believes that belonging is something we build together — through trust, clear communication, accountability, and the willingness to show up for our pack, again and again.
+Welcome to Ruff’s little corner of the internet.
+
+## Ruff in Manchester
+
+While Atlanta is my home base, I spend a lot of time traveling between communities, and the UK pup scene has become one of the places that feels like a second home.
+
+Events like **Collared Manchester** bring together pups, handlers, kinksters, and curious humans from across the north of England and beyond. It’s one of those spaces where people can show up as themselves, meet new friends, and share the strange, playful energy that makes pup spaces so special.
+
+If you met me here tonight, there’s a good chance I was:
+
+- wandering the venue meeting new people  
+- chatting with other pups and handlers  
+- explaining how the chip works  
+- or letting someone scan my hand just to watch their reaction
+
+## So why does my hand scan?
+
+Because meeting someone should be memorable.
+
+You just scanned one of the NFC implants in my hand. Your phone briefly powered the chip and it sent you here.
+
+No batteries.  
+No tracking.  
+Just a tiny piece of tech and a fun way to connect.
+
+And honestly, it’s a pretty good conversation starter.
+
+## If we met tonight
+
+I’m really glad you said hello.
+
+One of the things I love most about the pup community is how easy it is to meet people across cities and countries. A random conversation at an event can turn into friendships that stretch across the world.
+
+Moments like this are part of that.
+
+## One last thing
+
+If you see me again at Collared, somewhere else in Manchester, or across the UK scene, come say hi.
+
+And if someone asks how you got my contact info tonight…
+
+You already know the answer.

@@ -60,17 +60,6 @@ Sometimes all it takes is a moment.
 
 Or a slightly unusual handshake.
 
-## Stay connected
-
-🌐 **Website**  
-https://ruffthe.dog
-
-📸 **Instagram**  
-https://instagram.com/ruffthedog82
-
-👻 **Snapchat**  
-ruffninja82
-
 ## One last thing
 
 If you see me again at Comptons or somewhere else in Soho, come say hi.
