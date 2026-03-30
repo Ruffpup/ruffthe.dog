@@ -7,7 +7,7 @@ jobTitle: Puppy
 name: Ruff
 bio: true
 icon: ":dog:"
-slug: 'tab'
+slug: 'tap'
 ---
 
 # You found Ruff 🐾
