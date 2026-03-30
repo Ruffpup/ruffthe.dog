@@ -5,7 +5,7 @@ type: misc
 # change these
 jobTitle: Puppy
 name: Ruff
-bio: true
+bio: false
 icon: ":dog:"
 slug: 'tap'
 ---
