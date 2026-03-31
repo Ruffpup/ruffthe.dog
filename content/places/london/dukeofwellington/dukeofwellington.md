@@ -7,7 +7,7 @@ jobTitle: Puppy
 name: Ruff
 bio: true
 icon: ":dog:"
-slug: 'comptons'
+slug: 'dukeofwellington'
 ---
 
 # You met Ruff at Comptons 🐾
