@@ -7,7 +7,7 @@ jobTitle: Puppy
 name: Ruff
 bio: true
 icon: ":dog:"
-slug: 'bluf'
+slug: 'bluf-night'
 ---
 
 # You met Ruff at BLUF Night 🐾
