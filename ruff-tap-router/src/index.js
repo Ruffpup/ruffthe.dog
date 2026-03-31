@@ -15,7 +15,7 @@ export default {
               general: {
                 label: "General",
                 emoji: "🌙",
-                url: "https://ruffthe.dog/places/atlanta/atleagle/atleagle/"
+                url: "https://ruffthe.dog/places/atlanta/atleagle/generic/"
               },
               puptea: {
                 label: "Pup Tea",
@@ -38,20 +38,30 @@ export default {
               general: {
                 label: "General",
                 emoji: "🌙",
-                url: "https://ruffthe.dog/places/atlanta/heretic/"
+                url: "https://ruffthe.dog/places/atlanta/heretic/heretic/"
+              },
+              pupnight: {
+                label: "Pup Night",
+                emoji: "🐶",
+                url: "https://ruffthe.dog/places/atlanta/heretic/pupnight/"
+              },
+              bearacuda: {
+                label: "Bearacuda",
+                emoji: "🐻",
+                url: "https://ruffthe.dog/places/atlanta/heretic/bearacuda/"
               }
             }
           },
 
-          fwa: {
-            label: "Furry Weekend Atlanta",
+          conventions: {
+            label: "Atlanta Conventions",
             emoji: "🦊",
             type: "convention",
             events: {
-              convention: {
-                label: "Convention",
+              fwa: {
+                label: "Furry Weekend Atlanta",
                 emoji: "🎪",
-                url: "https://ruffthe.dog/places/atlanta/fwa/"
+                url: "https://ruffthe.dog/places/atlanta/conventions/fwa/"
               }
             }
           }
@@ -84,6 +94,19 @@ export default {
                 label: "General",
                 emoji: "🌙",
                 url: "https://ruffthe.dog/places/london/comptons/comptons/"
+              }
+            }
+          },
+
+          dukeofwellington: {
+            label: "The Duke of Wellington",
+            emoji: "🏳️‍🌈",
+            type: "bar",
+            events: {
+              general: {
+                label: "General",
+                emoji: "🌙",
+                url: "https://ruffthe.dog/places/london/dukeofwellington/dukeofwellington/"
               }
             }
           },
@@ -126,15 +149,15 @@ export default {
         label: "Augusta",
         emoji: "🌲",
         venues: {
-          spring_training: {
-            label: "Spring Training",
-            emoji: "🐶",
-            type: "event",
+          parliamentresort: {
+            label: "Parliament Resort",
+            emoji: "🏝️",
+            type: "resort",
             events: {
-              general: {
-                label: "General",
-                emoji: "🌙",
-                url: "https://ruffthe.dog/places/augusta/spring-training/"
+              spring_training: {
+                label: "Spring Training",
+                emoji: "🐶",
+                url: "https://ruffthe.dog/places/augusta/parliamentresort/spring-training/"
               }
             }
           }
@@ -391,15 +414,6 @@ export default {
         await incrementKV(env, `session_scan_event_${cityKey}_${venueKey}_${eventKey}`)
         await env.RUFF_KV.put("last_scan_event", `${cityKey}:${venueKey}:${eventKey}`)
       }
-
-      return {
-        lastScanAt,
-        currentUrl,
-        currentLabel,
-        cityKey,
-        venueKey,
-        eventKey
-      }
     }
 
     async function getStatsData(env, config) {
@@ -422,58 +436,29 @@ export default {
       }
 
       for (const [cityKey, city] of Object.entries(config)) {
-        stats.allTime.cityCounts[cityKey] = parseInt(
-          (await env.RUFF_KV.get(`all_scan_city_${cityKey}`)) || "0",
-          10
-        )
-
-        stats.session.cityCounts[cityKey] = parseInt(
-          (await env.RUFF_KV.get(`session_scan_city_${cityKey}`)) || "0",
-          10
-        )
+        stats.allTime.cityCounts[cityKey] = parseInt((await env.RUFF_KV.get(`all_scan_city_${cityKey}`)) || "0", 10)
+        stats.session.cityCounts[cityKey] = parseInt((await env.RUFF_KV.get(`session_scan_city_${cityKey}`)) || "0", 10)
 
         for (const [venueKey, venue] of Object.entries(city.venues)) {
           const venueCounterKey = `${cityKey}_${venueKey}`
 
           stats.allTime.venueCounts[venueCounterKey] = {
-            cityKey,
-            venueKey,
-            count: parseInt(
-              (await env.RUFF_KV.get(`all_scan_venue_${cityKey}_${venueKey}`)) || "0",
-              10
-            )
+            count: parseInt((await env.RUFF_KV.get(`all_scan_venue_${cityKey}_${venueKey}`)) || "0", 10)
           }
 
           stats.session.venueCounts[venueCounterKey] = {
-            cityKey,
-            venueKey,
-            count: parseInt(
-              (await env.RUFF_KV.get(`session_scan_venue_${cityKey}_${venueKey}`)) || "0",
-              10
-            )
+            count: parseInt((await env.RUFF_KV.get(`session_scan_venue_${cityKey}_${venueKey}`)) || "0", 10)
           }
 
           for (const [eventKey] of Object.entries(venue.events)) {
             const eventCounterKey = `${cityKey}_${venueKey}_${eventKey}`
 
             stats.allTime.eventCounts[eventCounterKey] = {
-              cityKey,
-              venueKey,
-              eventKey,
-              count: parseInt(
-                (await env.RUFF_KV.get(`all_scan_event_${cityKey}_${venueKey}_${eventKey}`)) || "0",
-                10
-              )
+              count: parseInt((await env.RUFF_KV.get(`all_scan_event_${cityKey}_${venueKey}_${eventKey}`)) || "0", 10)
             }
 
             stats.session.eventCounts[eventCounterKey] = {
-              cityKey,
-              venueKey,
-              eventKey,
-              count: parseInt(
-                (await env.RUFF_KV.get(`session_scan_event_${cityKey}_${venueKey}_${eventKey}`)) || "0",
-                10
-              )
+              count: parseInt((await env.RUFF_KV.get(`session_scan_event_${cityKey}_${venueKey}_${eventKey}`)) || "0", 10)
             }
           }
         }
@@ -496,9 +481,9 @@ export default {
       ].filter(Boolean)
 
       for (const [cityKey, city] of Object.entries(config)) {
-        const allCount = stats.allTime.cityCounts[cityKey] || 0
-        const sessionCount = stats.session.cityCounts[cityKey] || 0
-        lines.push(`${city.emoji} ${city.label}: all-time ${allCount} | session ${sessionCount}`)
+        lines.push(
+          `${city.emoji} ${city.label}: all-time ${stats.allTime.cityCounts[cityKey] || 0} | session ${stats.session.cityCounts[cityKey] || 0}`
+        )
       }
 
       lines.push("")
@@ -507,9 +492,9 @@ export default {
       for (const [cityKey, city] of Object.entries(config)) {
         for (const [venueKey, venue] of Object.entries(city.venues)) {
           const key = `${cityKey}_${venueKey}`
-          const allCount = stats.allTime.venueCounts[key]?.count || 0
-          const sessionCount = stats.session.venueCounts[key]?.count || 0
-          lines.push(`${venue.emoji} ${venue.label}: all-time ${allCount} | session ${sessionCount}`)
+          lines.push(
+            `${venue.emoji} ${venue.label}: all-time ${stats.allTime.venueCounts[key]?.count || 0} | session ${stats.session.venueCounts[key]?.count || 0}`
+          )
         }
       }
 
@@ -520,10 +505,8 @@ export default {
         for (const [venueKey, venue] of Object.entries(city.venues)) {
           for (const [eventKey, event] of Object.entries(venue.events)) {
             const key = `${cityKey}_${venueKey}_${eventKey}`
-            const allCount = stats.allTime.eventCounts[key]?.count || 0
-            const sessionCount = stats.session.eventCounts[key]?.count || 0
             lines.push(
-              `${event.emoji} ${venue.label} → ${event.label}: all-time ${allCount} | session ${sessionCount}`
+              `${event.emoji} ${venue.label} → ${event.label}: all-time ${stats.allTime.eventCounts[key]?.count || 0} | session ${stats.session.eventCounts[key]?.count || 0}`
             )
           }
         }
@@ -554,10 +537,8 @@ export default {
       }
 
       const update = await request.json()
-
       const message = update?.message?.text?.trim() || ""
       const chatId = update?.message?.chat?.id
-
       const callback = update?.callback_query
       const callbackData = callback?.data
       const callbackChatId = callback?.message?.chat?.id
@@ -577,53 +558,22 @@ export default {
 
         if (callbackData === "refresh" || callbackData === "nav:cities") {
           if (callbackChatId && callbackMessageId) {
-            await editCityPanel(
-              telegram,
-              callbackChatId,
-              callbackMessageId,
-              config,
-              current.currentLabel
-            )
+            await editCityPanel(telegram, callbackChatId, callbackMessageId, config, current.currentLabel)
           }
         } else if (callbackData.startsWith("city:")) {
           const [, cityKey] = callbackData.split(":")
-
           if (config[cityKey] && callbackChatId && callbackMessageId) {
-            await editVenuePanel(
-              telegram,
-              callbackChatId,
-              callbackMessageId,
-              config,
-              cityKey,
-              current.currentLabel
-            )
+            await editVenuePanel(telegram, callbackChatId, callbackMessageId, config, cityKey, current.currentLabel)
           }
         } else if (callbackData.startsWith("venue:")) {
           const [, cityKey, venueKey] = callbackData.split(":")
-
           if (config?.[cityKey]?.venues?.[venueKey] && callbackChatId && callbackMessageId) {
-            await editEventPanel(
-              telegram,
-              callbackChatId,
-              callbackMessageId,
-              config,
-              cityKey,
-              venueKey,
-              current.currentLabel
-            )
+            await editEventPanel(telegram, callbackChatId, callbackMessageId, config, cityKey, venueKey, current.currentLabel)
           }
         } else if (callbackData.startsWith("nav:venues:")) {
           const [, , cityKey] = callbackData.split(":")
-
           if (config[cityKey] && callbackChatId && callbackMessageId) {
-            await editVenuePanel(
-              telegram,
-              callbackChatId,
-              callbackMessageId,
-              config,
-              cityKey,
-              current.currentLabel
-            )
+            await editVenuePanel(telegram, callbackChatId, callbackMessageId, config, cityKey, current.currentLabel)
           }
         } else if (callbackData.startsWith("event:")) {
           const [, cityKey, venueKey, eventKey] = callbackData.split(":")
@@ -653,21 +603,16 @@ export default {
           }
         } else if (callbackData === "show_counts") {
           const stats = await getStatsData(env, config)
-          const statsText = buildStatsText(config, stats)
-
           if (callbackChatId) {
             await telegram("sendMessage", {
               chat_id: callbackChatId,
-              text: statsText
+              text: buildStatsText(config, stats)
             })
           }
         } else if (callbackData === "reset_counts_prompt") {
-          if (callbackChatId) {
-            await sendResetPrompt(callbackChatId)
-          }
+          if (callbackChatId) await sendResetPrompt(callbackChatId)
         } else if (callbackData === "reset_counts_confirm") {
           await resetSessionCounts(env, config)
-
           if (callbackChatId) {
             await telegram("sendMessage", {
               chat_id: callbackChatId,
@@ -685,7 +630,6 @@ export default {
 
         if (callbackId) {
           let callbackText = "🐾 Updated"
-
           if (callbackData === "show_counts") callbackText = "📊 Displaying stats"
           if (callbackData === "reset_counts_prompt") callbackText = "⚠️ Confirm reset in chat"
           if (callbackData === "reset_counts_confirm") callbackText = "🧹 Session reset"
@@ -731,21 +675,16 @@ export default {
 
         await telegram("sendMessage", {
           chat_id: chatId,
-          text:
-            "🐾 Ruff Scan Totals\n\n" +
-            `All-time: ${allTotal}\n` +
-            `Session: ${sessionTotal}`
+          text: `🐾 Ruff Scan Totals\n\nAll-time: ${allTotal}\nSession: ${sessionTotal}`
         })
         return new Response("ok")
       }
 
       if (message === "/stats") {
         const stats = await getStatsData(env, config)
-        const statsText = buildStatsText(config, stats)
-
         await telegram("sendMessage", {
           chat_id: chatId,
-          text: statsText
+          text: buildStatsText(config, stats)
         })
         return new Response("ok")
       }
@@ -780,10 +719,7 @@ export default {
     }
 
     await trackScan(env, config)
-
     const currentUrl = await env.RUFF_KV.get("current_url")
-    const destination = currentUrl || FALLBACK_URL
-
-    return Response.redirect(destination, 302)
+    return Response.redirect(currentUrl || FALLBACK_URL, 302)
   }
 }
