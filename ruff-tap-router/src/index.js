@@ -59,7 +59,7 @@ export default {
         { text: "🔄 Refresh Status", callback_data: "refresh" }
       ],
       [
-        { text: "📊 Display Counts", callback_data: "show_counts" },
+        { text: "📊 Show Counts", callback_data: "show_counts" },
         { text: "🧹 Reset Counts", callback_data: "reset_counts_prompt" }
       ],
       [
