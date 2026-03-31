@@ -7,77 +7,51 @@ export default {
         label: "Atlanta",
         emoji: "🍑",
         venues: {
-          eagle: {
+          atleagle: {
             label: "Eagle Atlanta",
             emoji: "🦅",
+            type: "bar",
             events: {
               general: {
                 label: "General",
                 emoji: "🌙",
-                url: "https://ruffthe.dog/places/atleagle/"
+                url: "https://ruffthe.dog/places/atlanta/atleagle/atleagle/"
               },
               puptea: {
                 label: "Pup Tea",
                 emoji: "🐾",
-                url: "https://ruffthe.dog/places/atleagle/puptea/"
+                url: "https://ruffthe.dog/places/atlanta/atleagle/puptea/"
               },
-              bluf: {
+              bluf_night: {
                 label: "BLUF Night",
                 emoji: "🪖",
-                url: "https://ruffthe.dog/places/atleagle/bluf/"
+                url: "https://ruffthe.dog/places/atlanta/atleagle/bluf-night/"
               }
             }
           },
+
           heretic: {
-            label: "Heretic Atlanta",
+            label: "Heretic",
             emoji: "🔥",
+            type: "bar",
             events: {
               general: {
                 label: "General",
                 emoji: "🌙",
-                url: "https://ruffthe.dog/places/heretic/"
-              },
-              pupnight: {
-                label: "Pup Night",
-                emoji: "🐶",
-                url: "https://ruffthe.dog/places/heretic/pupnight/"
-              },
-              bearacuda: {
-                label: "Bearacuda",
-                emoji: "🐻",
-                url: "https://ruffthe.dog/places/heretic/bearacuda/"
+                url: "https://ruffthe.dog/places/atlanta/heretic/"
               }
             }
           },
-          flex: {
-            label: "Flex Atlanta",
-            emoji: "💪",
+
+          fwa: {
+            label: "Furry Weekend Atlanta",
+            emoji: "🦊",
+            type: "convention",
             events: {
-              general: {
-                label: "General",
-                emoji: "🌙",
-                url: "https://ruffthe.dog/places/flex/"
-              }
-            }
-          },
-          tokyo_valentino: {
-            label: "Tokyo Valentino",
-            emoji: "🛍️",
-            events: {
-              shopping: {
-                label: "General / Shopping",
-                emoji: "🛒",
-                url: "https://ruffthe.dog/places/tokyo-valentino/"
-              },
-              cumunion: {
-                label: "Cumunion",
-                emoji: "💦",
-                url: "https://ruffthe.dog/places/tokyo-valentino/cumunion/"
-              },
-              dominion: {
-                label: "Dominion",
-                emoji: "⛓️",
-                url: "https://ruffthe.dog/places/tokyo-valentino/dominion/"
+              convention: {
+                label: "Convention",
+                emoji: "🎪",
+                url: "https://ruffthe.dog/places/atlanta/fwa/"
               }
             }
           }
@@ -88,100 +62,41 @@ export default {
         label: "London",
         emoji: "🇬🇧",
         venues: {
-          eagle_london: {
-            label: "Eagle London",
-            emoji: "🦅",
-            events: {
-              general: {
-                label: "General",
-                emoji: "🌙",
-                url: "https://ruffthe.dog/places/lhr-eagle/"
-              }
-            }
-          },
-          comptons: {
-            label: "Comptons",
-            emoji: "🍻",
-            events: {
-              general: {
-                label: "General",
-                emoji: "🌙",
-                url: "https://ruffthe.dog/places/comptons/"
-              }
-            }
-          },
-          steel_yard: {
-            label: "The Steel Yard",
-            emoji: "🔊",
-            events: {
-              general: {
-                label: "General",
-                emoji: "🌙",
-                url: "https://ruffthe.dog/places/steel-yard/"
-              },
-              beefmince: {
-                label: "Beefmince",
-                emoji: "🐻",
-                url: "https://ruffthe.dog/places/steel-yard/beefmince/"
-              }
-            }
-          },
-          central_station: {
+          centralstationpublichouse: {
             label: "Central Station Public House",
             emoji: "🚉",
+            type: "bar",
             events: {
-              general: {
-                label: "General",
-                emoji: "🌙",
-                url: "https://ruffthe.dog/places/central-station/"
-              },
               collared: {
                 label: "Collared",
                 emoji: "⛓️",
-                url: "https://ruffthe.dog/places/collared-lhr/"
+                url: "https://ruffthe.dog/places/london/centralstationpublichouse/collared-lhr/"
               }
             }
           },
-          kings_arms: {
-            label: "The Kings Arms",
-            emoji: "👑",
+
+          comptons: {
+            label: "Comptons",
+            emoji: "🍻",
+            type: "bar",
             events: {
               general: {
                 label: "General",
                 emoji: "🌙",
-                url: "https://ruffthe.dog/places/kings-arms/"
+                url: "https://ruffthe.dog/places/london/comptons/comptons/"
               }
             }
           },
-          duke_of_wellington: {
-            label: "The Duke of Wellington",
-            emoji: "🏳️‍🌈",
+
+          lhreagle: {
+            label: "Eagle London",
+            emoji: "🦅",
+            type: "bar",
             events: {
               general: {
                 label: "General",
                 emoji: "🌙",
-                url: "https://ruffthe.dog/places/duke-of-wellington/"
-              },
-              busy_lady_bingo: {
-                label: "Busy Lady Bingo",
-                emoji: "🎤",
-                url: "https://ruffthe.dog/places/duke-of-wellington/busy-lady-bingo/"
-              }
-            }
-          },
-          royal_vauxhall_tavern: {
-            label: "Royal Vauxhall Tavern",
-            emoji: "🎭",
-            events: {
-              general: {
-                label: "General",
-                emoji: "🌙",
-                url: "https://ruffthe.dog/places/royal-vauxhall-tavern/"
-              },
-              beefmince: {
-                label: "Beefmince",
-                emoji: "🐻",
-                url: "https://ruffthe.dog/places/royal-vauxhall-tavern/beefmince/"
+                url: "https://ruffthe.dog/places/london/lhreagle/lhr-eagle/"
               }
             }
           }
@@ -192,19 +107,15 @@ export default {
         label: "Manchester",
         emoji: "🇬🇧",
         venues: {
-          manchester_eagle: {
+          maneagle: {
             label: "Manchester Eagle",
             emoji: "🦅",
+            type: "bar",
             events: {
-              general: {
-                label: "General",
-                emoji: "🌙",
-                url: "https://ruffthe.dog/places/manchester-eagle/"
-              },
-              collared_manchester: {
+              collared_man: {
                 label: "Collared Manchester",
                 emoji: "⛓️",
-                url: "https://ruffthe.dog/places/collared-man/"
+                url: "https://ruffthe.dog/places/manchester/maneagle/collared-man/"
               }
             }
           }
@@ -215,42 +126,15 @@ export default {
         label: "Augusta",
         emoji: "🌲",
         venues: {
-          parliament_resort: {
-            label: "Parliament Resort",
-            emoji: "🏝️",
+          spring_training: {
+            label: "Spring Training",
+            emoji: "🐶",
+            type: "event",
             events: {
               general: {
                 label: "General",
                 emoji: "🌙",
-                url: "https://ruffthe.dog/places/parliament-resort/"
-              },
-              spring_training: {
-                label: "Spring Training",
-                emoji: "🐶",
-                url: "https://ruffthe.dog/places/spring-training/"
-              },
-              dog_days: {
-                label: "Dog Days",
-                emoji: "🐕",
-                url: "https://ruffthe.dog/places/parliament-resort/dog-days/"
-              }
-            }
-          }
-        }
-      },
-
-      montreal: {
-        label: "Montreal",
-        emoji: "🍁",
-        venues: {
-          gi_joe: {
-            label: "GI Joe",
-            emoji: "🪖",
-            events: {
-              general: {
-                label: "General",
-                emoji: "🌙",
-                url: "https://ruffthe.dog/places/gi-joe/"
+                url: "https://ruffthe.dog/places/augusta/spring-training/"
               }
             }
           }
