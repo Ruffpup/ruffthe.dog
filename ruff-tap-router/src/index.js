@@ -68,10 +68,23 @@ export default {
             { text: "📊 Display Counts", callback_data: "show_counts" }
           ],
           [
-            { text: "🧹 Reset Counts", callback_data: "reset_counts" }
+            { text: "🧹 Reset Counts", callback_data: "reset_counts_prompt" }
           ],
           [
             { text: "🌐 Open tap URL", url: "https://ruffthe.dog/tap" }
+          ]
+        ]
+      }
+    }
+
+    function resetConfirmKeyboard() {
+      return {
+        inline_keyboard: [
+          [
+            { text: "⚠️ Yes, Reset All Counts", callback_data: "reset_counts_confirm" }
+          ],
+          [
+            { text: "❌ Cancel", callback_data: "reset_counts_cancel" }
           ]
         ]
       }
@@ -136,6 +149,16 @@ export default {
       })
     }
 
+    async function sendResetPrompt(chatId) {
+      return telegram("sendMessage", {
+        chat_id: chatId,
+        text:
+          "⚠️ Reset all Ruff tap counts?\n\n" +
+          "This will set the total counter and every event counter back to 0.",
+        reply_markup: resetConfirmKeyboard()
+      })
+    }
+
     if (url.pathname === `/telegram/${env.TELEGRAM_WEBHOOK_SECRET}`) {
       if (request.method !== "POST") {
         return new Response("Method not allowed", { status: 405 })
@@ -191,9 +214,35 @@ export default {
           nextPlace = await env.RUFF_KV.get("current_place") || "tap"
         }
 
-        if (callbackData === "reset_counts") {
+        if (callbackData === "reset_counts_prompt") {
+          if (callbackChatId) {
+            await sendResetPrompt(callbackChatId)
+          }
+
+          nextPlace = await env.RUFF_KV.get("current_place") || "tap"
+        }
+
+        if (callbackData === "reset_counts_confirm") {
           await resetCounts(env, routes)
           nextPlace = await env.RUFF_KV.get("current_place") || "tap"
+
+          if (callbackChatId) {
+            await telegram("sendMessage", {
+              chat_id: callbackChatId,
+              text: "🧹 Ruff tap counts reset to 0."
+            })
+          }
+        }
+
+        if (callbackData === "reset_counts_cancel") {
+          nextPlace = await env.RUFF_KV.get("current_place") || "tap"
+
+          if (callbackChatId) {
+            await telegram("sendMessage", {
+              chat_id: callbackChatId,
+              text: "Reset canceled."
+            })
+          }
         }
 
         if (callbackId) {
@@ -203,8 +252,16 @@ export default {
             callbackText = "📊 Displaying counts"
           }
 
-          if (callbackData === "reset_counts") {
-            callbackText = "🧹 Ruff tap counts reset"
+          if (callbackData === "reset_counts_prompt") {
+            callbackText = "⚠️ Confirm reset in chat"
+          }
+
+          if (callbackData === "reset_counts_confirm") {
+            callbackText = "🧹 Counts reset"
+          }
+
+          if (callbackData === "reset_counts_cancel") {
+            callbackText = "Reset canceled"
           }
 
           await telegram("answerCallbackQuery", {
@@ -213,7 +270,13 @@ export default {
           })
         }
 
-        if (callbackChatId && callbackMessageId) {
+        if (
+          callbackChatId &&
+          callbackMessageId &&
+          callbackData !== "reset_counts_prompt" &&
+          callbackData !== "reset_counts_confirm" &&
+          callbackData !== "reset_counts_cancel"
+        ) {
           await editBeaconPanel(callbackChatId, callbackMessageId, nextPlace)
         }
 
@@ -260,13 +323,7 @@ export default {
       }
 
       if (message === "/reset") {
-        await resetCounts(env, routes)
-
-        await telegram("sendMessage", {
-          chat_id: chatId,
-          text: "🧹 Ruff tap counts reset to 0."
-        })
-
+        await sendResetPrompt(chatId)
         return new Response("ok")
       }
 
@@ -317,7 +374,7 @@ export default {
           "/status - show current location\n" +
           "/count - show total tap scans\n" +
           "/stats - show tap counts by event\n" +
-          "/reset - reset all tap counts\n" +
+          "/reset - open reset confirmation\n" +
           "/places - list valid keys\n" +
           "/set <place> - manually set location"
       })
