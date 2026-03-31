@@ -36,47 +36,39 @@ export default {
     }
 
     function beaconKeyboard() {
-      return {
-        inline_keyboard: [
-          [
-            { text: "🦅 Eagle ATL", callback_data: "set:atleagle" },
-            { text: "🔥 Heretic ATL", callback_data: "set:atlheretic" }
-          ],
-          [
-            { text: "🇬🇧 Collared London", callback_data: "set:collaredlhr" }
-          ],
-          [
-            { text: "🇬🇧 Collared Manchester", callback_data: "set:collaredman" }
-          ],
-          [
-            { text: "🇬🇧 Eagle London", callback_data: "set:lhreagle" }
-          ],
-          [
-            { text: "🐶 Spring Training", callback_data: "set:springtraining" }
-          ],
-          [
-            { text: "🍻 Comptons", callback_data: "set:comptons" },
-            { text: "🦊 FWA", callback_data: "set:fwa" }
-          ],
-          [
-            { text: "🐾 Tap Fallback", callback_data: "set:tap" }
-          ],
-          [
-            { text: "🔄 Refresh Status", callback_data: "refresh" }
-          ],
-          [
-            { text: "📊 Display Counts", callback_data: "show_counts" }
-          ],
-          [
-            { text: "🧹 Reset Counts", callback_data: "reset_counts_prompt" }
-          ],
-          [
-            { text: "🌐 Open tap URL", url: "https://ruffthe.dog/tap" }
-          ]
-        ]
-      }
-    }
-
+  return {
+    inline_keyboard: [
+      [
+        { text: "🦅 Eagle ATL", callback_data: "set:atleagle" },
+        { text: "🔥 Heretic ATL", callback_data: "set:atlheretic" }
+      ],
+      [
+        { text: "🇬🇧 Collared LON", callback_data: "set:collaredlhr" },
+        { text: "🇬🇧 Collared MAN", callback_data: "set:collaredman" }
+      ],
+      [
+        { text: "🇬🇧 Eagle London", callback_data: "set:lhreagle" },
+        { text: "🐶 Spring Training", callback_data: "set:springtraining" }
+      ],
+      [
+        { text: "🍻 Comptons", callback_data: "set:comptons" },
+        { text: "🦊 FWA", callback_data: "set:fwa" }
+      ],
+      [
+        { text: "🐾 Tap Fallback", callback_data: "set:tap" },
+        { text: "🔄 Refresh Status", callback_data: "refresh" }
+      ],
+      [
+        { text: "📊 Display Counts", callback_data: "show_counts" },
+        { text: "🧹 Reset Counts", callback_data: "reset_counts_prompt" }
+      ],
+      [
+        { text: "🌐 Open tap URL", url: "https://ruffthe.dog/tap" },
+        { text: "📍 Status", callback_data: "refresh" }
+      ]
+    ]
+  }
+}
     function resetConfirmKeyboard() {
       return {
         inline_keyboard: [
