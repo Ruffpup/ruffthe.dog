@@ -191,6 +191,22 @@ export default {
     }
 
     async function getCurrentSelection(env) {
+      const currentSelectionRaw = await env.RUFF_KV.get("current_selection")
+      if (currentSelectionRaw) {
+        try {
+          const parsed = JSON.parse(currentSelectionRaw)
+          return {
+            cityKey: parsed.cityKey || null,
+            venueKey: parsed.venueKey || null,
+            eventKey: parsed.eventKey || null,
+            currentUrl: parsed.currentUrl || FALLBACK_URL,
+            currentLabel: parsed.currentLabel || "🐾 Tap Fallback"
+          }
+        } catch (error) {
+          // Fall through to legacy keys
+        }
+      }
+
       const [cityKey, venueKey, eventKey, currentUrl, currentLabel] = await Promise.all([
         env.RUFF_KV.get("current_city"),
         env.RUFF_KV.get("current_venue"),
@@ -216,15 +232,45 @@ export default {
 
       const label = buildSelectionLabel(config, cityKey, venueKey, eventKey)
 
+      const selection = {
+        cityKey,
+        venueKey,
+        eventKey,
+        currentUrl: event.url,
+        currentLabel: label
+      }
+
       await Promise.all([
         env.RUFF_KV.put("current_city", cityKey),
         env.RUFF_KV.put("current_venue", venueKey),
         env.RUFF_KV.put("current_event", eventKey),
         env.RUFF_KV.put("current_url", event.url),
-        env.RUFF_KV.put("current_label", label)
+        env.RUFF_KV.put("current_label", label),
+        env.RUFF_KV.put("current_selection", JSON.stringify(selection))
       ])
 
       return { city, venue, event, label }
+    }
+
+    async function saveFallbackSelection(env) {
+      const selection = {
+        cityKey: null,
+        venueKey: null,
+        eventKey: null,
+        currentUrl: FALLBACK_URL,
+        currentLabel: "🐾 Tap Fallback"
+      }
+
+      await Promise.all([
+        env.RUFF_KV.put("current_city", ""),
+        env.RUFF_KV.put("current_venue", ""),
+        env.RUFF_KV.put("current_event", ""),
+        env.RUFF_KV.put("current_url", FALLBACK_URL),
+        env.RUFF_KV.put("current_label", "🐾 Tap Fallback"),
+        env.RUFF_KV.put("current_selection", JSON.stringify(selection))
+      ])
+
+      return selection
     }
 
     function cityKeyboard(config) {
@@ -235,6 +281,7 @@ export default {
 
       return {
         inline_keyboard: [
+          [{ text: "🐾 Tap Fallback", callback_data: "set:fallback" }],
           ...chunkButtons(buttons, 2),
           [
             { text: "📊 Show Stats", callback_data: "show_counts" },
@@ -524,6 +571,35 @@ export default {
         if (callbackChatId && callbackMessageId) {
           await editCityPanel(callbackChatId, callbackMessageId, current.currentLabel)
         }
+      } else if (callbackData === "set:fallback") {
+        const saved = await saveFallbackSelection(env)
+
+        if (callbackChatId && callbackMessageId) {
+          await telegram("editMessageText", {
+            chat_id: callbackChatId,
+            message_id: callbackMessageId,
+            text:
+              "✅ Ruff beacon updated\n\n" +
+              "Redirect:\n" +
+              `${saved.currentUrl}\n\n` +
+              `${saved.currentLabel}`,
+            reply_markup: {
+              inline_keyboard: [
+                [
+                  { text: "🔁 Change Selection", callback_data: "nav:cities" },
+                  { text: "📍 Refresh Status", callback_data: "refresh" }
+                ],
+                [
+                  { text: "📊 Show Stats", callback_data: "show_counts" },
+                  { text: "🧹 Reset Session", callback_data: "reset_counts_prompt" }
+                ],
+                [
+                  { text: "🌐 Open tap URL", url: "https://ruffthe.dog/tap" }
+                ]
+              ]
+            }
+          })
+        }
       } else if (callbackData.startsWith("city:")) {
         const [, cityKey] = callbackData.split(":")
         if (config[cityKey] && callbackChatId && callbackMessageId) {
@@ -594,6 +670,7 @@ export default {
 
       if (callbackId) {
         let callbackText = "🐾 Updated"
+        if (callbackData === "set:fallback") callbackText = "🐾 Fallback selected"
         if (callbackData === "show_counts") callbackText = "📊 Displaying stats"
         if (callbackData === "reset_counts_prompt") callbackText = "⚠️ Confirm reset in chat"
         if (callbackData === "reset_counts_confirm") callbackText = "🧹 Session reset"
