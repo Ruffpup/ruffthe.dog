@@ -2,6 +2,11 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url)
 
+    const FALLBACK_URL = "https://ruffthe.dog/places/tap/"
+    const FALLBACK_LABEL = "🐾 Tap Fallback"
+    const TAP_URL = "https://ruffthe.dog/tap"
+    const allowedChatId = 1806066012
+
     const config = {
       atlanta: {
         label: "Atlanta",
@@ -107,6 +112,11 @@ export default {
                 label: "General",
                 emoji: "🌙",
                 url: "https://ruffthe.dog/places/london/dukeofwellington/dukeofwellington/"
+              },
+              busy_lady: {
+                label: "Busy Lady Bingo",
+                emoji: "🎱",
+                url: "https://ruffthe.dog/places/london/dukeofwellington/busy-lady/"
               }
             }
           },
@@ -120,6 +130,42 @@ export default {
                 label: "General",
                 emoji: "🌙",
                 url: "https://ruffthe.dog/places/london/lhreagle/lhr-eagle/"
+              }
+            }
+          },
+
+          rvt: {
+            label: "Royal Vauxhall Tavern",
+            emoji: "🎭",
+            type: "bar",
+            events: {
+              general: {
+                label: "General",
+                emoji: "🌙",
+                url: "https://ruffthe.dog/places/london/rvt/rvt/"
+              },
+              beefmince: {
+                label: "Beefmince",
+                emoji: "🐻",
+                url: "https://ruffthe.dog/places/london/rvt/rvtbeefmince/"
+              }
+            }
+          },
+
+          steelyard: {
+            label: "The Steel Yard",
+            emoji: "🔊",
+            type: "club",
+            events: {
+              general: {
+                label: "General",
+                emoji: "🌙",
+                url: "https://ruffthe.dog/places/london/steelyard/steelyard/"
+              },
+              beefmince: {
+                label: "Beefmince",
+                emoji: "🐻",
+                url: "https://ruffthe.dog/places/london/steelyard/sybeefmince/"
               }
             }
           }
@@ -165,9 +211,6 @@ export default {
       }
     }
 
-    const FALLBACK_URL = "https://ruffthe.dog/places/tap/"
-    const allowedChatId = 1806066012
-
     async function telegram(method, body) {
       return fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/${method}`, {
         method: "POST",
@@ -178,15 +221,44 @@ export default {
 
     function chunkButtons(buttons, size = 2) {
       const rows = []
-      for (let i = 0; i < buttons.length; i += size) rows.push(buttons.slice(i, i + size))
+      for (let i = 0; i < buttons.length; i += size) {
+        rows.push(buttons.slice(i, i + size))
+      }
       return rows
     }
 
+    function buildKeyboard(buttons, extraRows = [], size = 2) {
+      return {
+        inline_keyboard: [
+          ...chunkButtons(buttons, size),
+          ...extraRows
+        ]
+      }
+    }
+
+    function getCity(config, cityKey) {
+      return config?.[cityKey] || null
+    }
+
+    function getVenue(config, cityKey, venueKey) {
+      return config?.[cityKey]?.venues?.[venueKey] || null
+    }
+
+    function getEvent(config, cityKey, venueKey, eventKey) {
+      return config?.[cityKey]?.venues?.[venueKey]?.events?.[eventKey] || null
+    }
+
+    function getSelectionParts(config, cityKey, venueKey, eventKey) {
+      return {
+        city: getCity(config, cityKey),
+        venue: getVenue(config, cityKey, venueKey),
+        event: getEvent(config, cityKey, venueKey, eventKey)
+      }
+    }
+
     function buildSelectionLabel(config, cityKey, venueKey, eventKey) {
-      const city = config?.[cityKey]
-      const venue = city?.venues?.[venueKey]
-      const event = venue?.events?.[eventKey]
-      if (!city || !venue || !event) return "🐾 Tap Fallback"
+      const { city, venue, event } = getSelectionParts(config, cityKey, venueKey, eventKey)
+      if (!city || !venue || !event) return FALLBACK_LABEL
       return `${city.emoji} ${city.label} → ${venue.emoji} ${venue.label} → ${event.emoji} ${event.label}`
     }
 
@@ -200,7 +272,7 @@ export default {
             venueKey: parsed.venueKey || null,
             eventKey: parsed.eventKey || null,
             currentUrl: parsed.currentUrl || FALLBACK_URL,
-            currentLabel: parsed.currentLabel || "🐾 Tap Fallback"
+            currentLabel: parsed.currentLabel || FALLBACK_LABEL
           }
         } catch (error) {
           // Fall through to legacy keys
@@ -220,14 +292,12 @@ export default {
         venueKey,
         eventKey,
         currentUrl: currentUrl || FALLBACK_URL,
-        currentLabel: currentLabel || "🐾 Tap Fallback"
+        currentLabel: currentLabel || FALLBACK_LABEL
       }
     }
 
     async function saveSelection(env, config, cityKey, venueKey, eventKey) {
-      const city = config?.[cityKey]
-      const venue = city?.venues?.[venueKey]
-      const event = venue?.events?.[eventKey]
+      const { city, venue, event } = getSelectionParts(config, cityKey, venueKey, eventKey)
       if (!city || !venue || !event) return null
 
       const label = buildSelectionLabel(config, cityKey, venueKey, eventKey)
@@ -258,7 +328,7 @@ export default {
         venueKey: null,
         eventKey: null,
         currentUrl: FALLBACK_URL,
-        currentLabel: "🐾 Tap Fallback"
+        currentLabel: FALLBACK_LABEL
       }
 
       await Promise.all([
@@ -266,7 +336,7 @@ export default {
         env.RUFF_KV.put("current_venue", ""),
         env.RUFF_KV.put("current_event", ""),
         env.RUFF_KV.put("current_url", FALLBACK_URL),
-        env.RUFF_KV.put("current_label", "🐾 Tap Fallback"),
+        env.RUFF_KV.put("current_label", FALLBACK_LABEL),
         env.RUFF_KV.put("current_selection", JSON.stringify(selection))
       ])
 
@@ -279,24 +349,21 @@ export default {
         callback_data: `city:${cityKey}`
       }))
 
-      return {
-        inline_keyboard: [
-          [{ text: "🐾 Tap Fallback", callback_data: "set:fallback" }],
-          ...chunkButtons(buttons, 2),
-          [
-            { text: "📊 Show Stats", callback_data: "show_counts" },
-            { text: "🧹 Reset Session", callback_data: "reset_counts_prompt" }
-          ],
-          [
-            { text: "📍 Refresh Status", callback_data: "refresh" },
-            { text: "🌐 Open tap URL", url: "https://ruffthe.dog/tap" }
-          ]
+      return buildKeyboard(buttons, [
+        [{ text: "🐾 Tap Fallback", callback_data: "set:fallback" }],
+        [
+          { text: "📊 Show Stats", callback_data: "show_counts" },
+          { text: "🧹 Reset Session", callback_data: "reset_counts_prompt" }
+        ],
+        [
+          { text: "📍 Refresh Status", callback_data: "refresh" },
+          { text: "🌐 Open tap URL", url: TAP_URL }
         ]
-      }
+      ])
     }
 
     function venueKeyboard(config, cityKey) {
-      const city = config?.[cityKey]
+      const city = getCity(config, cityKey)
       if (!city) return cityKeyboard(config)
 
       const buttons = Object.entries(city.venues).map(([venueKey, venue]) => ({
@@ -304,16 +371,13 @@ export default {
         callback_data: `venue:${cityKey}:${venueKey}`
       }))
 
-      return {
-        inline_keyboard: [
-          ...chunkButtons(buttons, 2),
-          [{ text: "⬅️ Back to Cities", callback_data: "nav:cities" }]
-        ]
-      }
+      return buildKeyboard(buttons, [
+        [{ text: "⬅️ Back to Cities", callback_data: "nav:cities" }]
+      ])
     }
 
     function eventKeyboard(config, cityKey, venueKey) {
-      const venue = config?.[cityKey]?.venues?.[venueKey]
+      const venue = getVenue(config, cityKey, venueKey)
       if (!venue) return venueKeyboard(config, cityKey)
 
       const buttons = Object.entries(venue.events).map(([eventKey, event]) => ({
@@ -321,13 +385,10 @@ export default {
         callback_data: `event:${cityKey}:${venueKey}:${eventKey}`
       }))
 
-      return {
-        inline_keyboard: [
-          ...chunkButtons(buttons, 2),
-          [{ text: "⬅️ Back to Venues", callback_data: `nav:venues:${cityKey}` }],
-          [{ text: "🏠 Back to Cities", callback_data: "nav:cities" }]
-        ]
-      }
+      return buildKeyboard(buttons, [
+        [{ text: "⬅️ Back to Venues", callback_data: `nav:venues:${cityKey}` }],
+        [{ text: "🏠 Back to Cities", callback_data: "nav:cities" }]
+      ])
     }
 
     function resetConfirmKeyboard() {
@@ -339,30 +400,26 @@ export default {
       }
     }
 
-    function cityPanelText(currentLabel) {
+    function panelText(step, currentLabel, prompt) {
       return (
         "🐾 Ruff Beacon Setup\n\n" +
         `Current redirect:\n${currentLabel}\n\n` +
-        "Step 1: Choose a city."
+        `Step ${step}: ${prompt}`
       )
+    }
+
+    function cityPanelText(currentLabel) {
+      return panelText(1, currentLabel, "Choose a city.")
     }
 
     function venuePanelText(config, cityKey, currentLabel) {
-      const city = config?.[cityKey]
-      return (
-        "🐾 Ruff Beacon Setup\n\n" +
-        `Current redirect:\n${currentLabel}\n\n` +
-        `Step 2: Choose a venue in ${city?.emoji || ""} ${city?.label || cityKey}.`
-      )
+      const city = getCity(config, cityKey)
+      return panelText(2, currentLabel, `Choose a venue in ${city?.emoji || ""} ${city?.label || cityKey}.`)
     }
 
     function eventPanelText(config, cityKey, venueKey, currentLabel) {
-      const venue = config?.[cityKey]?.venues?.[venueKey]
-      return (
-        "🐾 Ruff Beacon Setup\n\n" +
-        `Current redirect:\n${currentLabel}\n\n` +
-        `Step 3: Choose an event for ${venue?.emoji || ""} ${venue?.label || venueKey}.`
-      )
+      const venue = getVenue(config, cityKey, venueKey)
+      return panelText(3, currentLabel, `Choose an event for ${venue?.emoji || ""} ${venue?.label || venueKey}.`)
     }
 
     function selectionSavedText(city, venue, event, label) {
@@ -374,6 +431,24 @@ export default {
         `Redirect:\n${event.url}\n\n` +
         `${label}`
       )
+    }
+
+    function postSelectionKeyboard() {
+      return {
+        inline_keyboard: [
+          [
+            { text: "🔁 Change Selection", callback_data: "nav:cities" },
+            { text: "📍 Refresh Status", callback_data: "refresh" }
+          ],
+          [
+            { text: "📊 Show Stats", callback_data: "show_counts" },
+            { text: "🧹 Reset Session", callback_data: "reset_counts_prompt" }
+          ],
+          [
+            { text: "🌐 Open tap URL", url: TAP_URL }
+          ]
+        ]
+      }
     }
 
     async function sendCityPanel(chatId, currentLabel) {
@@ -480,7 +555,7 @@ export default {
         `All-time total: ${stats.allTime.total}`,
         `Session total: ${stats.session.total}`,
         `Last scan (Zulu): ${stats.lastScanAt || "None"}`,
-        `Last target: ${stats.lastScanLabel || "🐾 Tap Fallback"}`,
+        `Last target: ${stats.lastScanLabel || FALLBACK_LABEL}`,
         stats.lastScanUrl ? `Last URL: ${stats.lastScanUrl}` : null,
         "",
         "By city:"
@@ -499,7 +574,7 @@ export default {
         for (const [venueKey, venue] of Object.entries(city.venues)) {
           const key = `${cityKey}_${venueKey}`
           lines.push(
-            `${venue.emoji} ${venue.label}: all-time ${stats.allTime.venueCounts[key]?.count || 0} | session ${stats.session.venueCounts[key]?.count || 0}`
+            `${venue.emoji} ${city.label} → ${venue.label}: all-time ${stats.allTime.venueCounts[key]?.count || 0} | session ${stats.session.venueCounts[key]?.count || 0}`
           )
         }
       }
@@ -512,7 +587,7 @@ export default {
           for (const [eventKey, event] of Object.entries(venue.events)) {
             const key = `${cityKey}_${venueKey}_${eventKey}`
             lines.push(
-              `${event.emoji} ${venue.label} → ${event.label}: all-time ${stats.allTime.eventCounts[key]?.count || 0} | session ${stats.session.eventCounts[key]?.count || 0}`
+              `${event.emoji} ${city.label} → ${venue.label} → ${event.label}: all-time ${stats.allTime.eventCounts[key]?.count || 0} | session ${stats.session.eventCounts[key]?.count || 0}`
             )
           }
         }
@@ -583,36 +658,22 @@ export default {
               "Redirect:\n" +
               `${saved.currentUrl}\n\n` +
               `${saved.currentLabel}`,
-            reply_markup: {
-              inline_keyboard: [
-                [
-                  { text: "🔁 Change Selection", callback_data: "nav:cities" },
-                  { text: "📍 Refresh Status", callback_data: "refresh" }
-                ],
-                [
-                  { text: "📊 Show Stats", callback_data: "show_counts" },
-                  { text: "🧹 Reset Session", callback_data: "reset_counts_prompt" }
-                ],
-                [
-                  { text: "🌐 Open tap URL", url: "https://ruffthe.dog/tap" }
-                ]
-              ]
-            }
+            reply_markup: postSelectionKeyboard()
           })
         }
       } else if (callbackData.startsWith("city:")) {
         const [, cityKey] = callbackData.split(":")
-        if (config[cityKey] && callbackChatId && callbackMessageId) {
+        if (getCity(config, cityKey) && callbackChatId && callbackMessageId) {
           await editVenuePanel(callbackChatId, callbackMessageId, cityKey, current.currentLabel)
         }
       } else if (callbackData.startsWith("venue:")) {
         const [, cityKey, venueKey] = callbackData.split(":")
-        if (config?.[cityKey]?.venues?.[venueKey] && callbackChatId && callbackMessageId) {
+        if (getVenue(config, cityKey, venueKey) && callbackChatId && callbackMessageId) {
           await editEventPanel(callbackChatId, callbackMessageId, cityKey, venueKey, current.currentLabel)
         }
       } else if (callbackData.startsWith("nav:venues:")) {
         const [, , cityKey] = callbackData.split(":")
-        if (config[cityKey] && callbackChatId && callbackMessageId) {
+        if (getCity(config, cityKey) && callbackChatId && callbackMessageId) {
           await editVenuePanel(callbackChatId, callbackMessageId, cityKey, current.currentLabel)
         }
       } else if (callbackData.startsWith("event:")) {
@@ -624,21 +685,7 @@ export default {
             chat_id: callbackChatId,
             message_id: callbackMessageId,
             text: selectionSavedText(saved.city, saved.venue, saved.event, saved.label),
-            reply_markup: {
-              inline_keyboard: [
-                [
-                  { text: "🔁 Change Selection", callback_data: "nav:cities" },
-                  { text: "📍 Refresh Status", callback_data: "refresh" }
-                ],
-                [
-                  { text: "📊 Show Stats", callback_data: "show_counts" },
-                  { text: "🧹 Reset Session", callback_data: "reset_counts_prompt" }
-                ],
-                [
-                  { text: "🌐 Open tap URL", url: "https://ruffthe.dog/tap" }
-                ]
-              ]
-            }
+            reply_markup: postSelectionKeyboard()
           })
         }
       } else if (callbackData === "show_counts") {
