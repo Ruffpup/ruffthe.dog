@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "ruff-tap-router",
+  "name": "ruff-tap-worker",
   "main": "src/index.js",
   "compatibility_date": "2026-03-10",
   "observability": {

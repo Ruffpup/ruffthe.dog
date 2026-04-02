@@ -1,0 +1,25 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "ruff-telegram-worker",
+	"main": "src/index.js",
+	"compatibility_date": "2026-03-10",
+	"observability": {
+		"enabled": true
+	},
+	"upload_source_maps": true,
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"kv_namespaces": [
+		{
+			"binding": "RUFF_KV",
+			"id": "cc58a26addc147f8b1056c3e7f8ee9e4"
+		}
+	],
+	"routes": [
+		{
+			"pattern": "ruffthe.dog/telegram/*",
+			"zone_name": "ruffthe.dog"
+		}
+	]
+}
