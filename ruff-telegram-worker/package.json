@@ -1,16 +1,23 @@
 {
-	"name": "ruff-tap-router",
-	"version": "0.0.0",
-	"private": true,
-	"scripts": {
-		"deploy": "wrangler deploy",
-		"dev": "wrangler dev",
-		"start": "wrangler dev",
-		"test": "vitest"
-	},
-	"devDependencies": {
-		"@cloudflare/vitest-pool-workers": "^0.12.4",
-		"vitest": "~3.2.0",
-		"wrangler": "^4.78.0"
-	}
+  "name": "ruff-telegram-worker",
+  "version": "1.0.4",
+  "private": true,
+  "scripts": {
+    "prebuild:version": "node -e \"const fs=require('fs'); const pkg=require('./package.json'); const ts=new Date().toISOString(); const out = 'export const WORKER_VERSION = ' + JSON.stringify(pkg.version) + ';\\n' + 'export const DEPLOYED_AT = ' + JSON.stringify(ts) + ';\\n'; fs.writeFileSync('./src/version.generated.js', out);\"",
+    "deploy": "npm run prebuild:version && wrangler deploy",
+    "dev": "wrangler dev",
+    "start": "wrangler dev",
+    "test": "vitest",
+    "bump:patch": "npm version patch --no-git-tag-version",
+    "bump:minor": "npm version minor --no-git-tag-version",
+    "bump:major": "npm version major --no-git-tag-version",
+    "release:patch": "npm version patch --no-git-tag-version && npm run prebuild:version && wrangler deploy",
+    "release:minor": "npm version minor --no-git-tag-version && npm run prebuild:version && wrangler deploy",
+    "release:major": "npm version major --no-git-tag-version && npm run prebuild:version && wrangler deploy"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.12.4",
+    "vitest": "~3.2.0",
+    "wrangler": "^4.78.0"
+  }
 }
