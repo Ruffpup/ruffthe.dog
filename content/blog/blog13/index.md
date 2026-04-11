@@ -5,7 +5,7 @@ summary: "Misconceptions about pup play often miss the joy, creativity, and comm
 date: 2026-04-11
 cardimage: blog13_card.jpeg
 featureimage: blog13.jpeg
-caption: "Ruff reflecting on community, authenticity, and the unexpected moments that remind us why visibility matters."
+caption: "Chaos corgi Ruff in Atlanta. Sometimes pup play is deep conversations about identity. Sometimes it’s just a pup in bright colors having zoomies."
 slug: 'what-people-get-wrong-about-pup-play'
 alt: "Ruff wearing a pup hood and collar, reflecting on identity, community, and authenticity."
 tags:
