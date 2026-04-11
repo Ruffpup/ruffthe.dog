@@ -230,18 +230,44 @@ export default {
       }
     }
 
-    const telegram = (method, body) =>
-      fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/${method}`, {
+    const telegram = async (method, body) => {
+      const res = await fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/${method}`, {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(body)
       })
 
-    const sendMessage = (chatId, text, reply_markup) =>
-      telegram("sendMessage", { chat_id: chatId, text, ...(reply_markup ? { reply_markup } : {}) })
+      const data = await res.json().catch(() => null)
 
-    const editMessage = (chatId, messageId, text, reply_markup) =>
-      telegram("editMessageText", { chat_id: chatId, message_id: messageId, text, ...(reply_markup ? { reply_markup } : {}) })
+      if (!res.ok || !data?.ok) {
+        console.error("Telegram API error", {
+          method,
+          status: res.status,
+          requestBody: body,
+          responseBody: data
+        })
+        throw new Error(`Telegram API failed for ${method}: ${JSON.stringify(data)}`)
+      }
+
+      return data
+    }
+
+    const sendMessage = (chatId, text, reply_markup, parse_mode) =>
+      telegram("sendMessage", {
+        chat_id: chatId,
+        text,
+        ...(reply_markup ? { reply_markup } : {}),
+        ...(parse_mode ? { parse_mode } : {})
+      })
+
+    const editMessage = (chatId, messageId, text, reply_markup, parse_mode) =>
+      telegram("editMessageText", {
+        chat_id: chatId,
+        message_id: messageId,
+        text,
+        ...(reply_markup ? { reply_markup } : {}),
+        ...(parse_mode ? { parse_mode } : {})
+      })
 
     const answerCallback = (callbackId, text) =>
       telegram("answerCallbackQuery", { callback_query_id: callbackId, text })
@@ -341,6 +367,17 @@ export default {
       `Redirect:\n${event.url}\n\n` +
       `${label}`
 
+    function escapeHtml(text = "") {
+      return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+    }
+
+    function pad(value, width) {
+      return String(value).padEnd(width, " ")
+    }
+
     async function getCurrentSelection() {
       const currentSelectionRaw = await env.RUFF_KV.get("current_selection")
       if (currentSelectionRaw) {
@@ -353,7 +390,9 @@ export default {
             currentUrl: parsed.currentUrl || FALLBACK_URL,
             currentLabel: parsed.currentLabel || FALLBACK_LABEL
           }
-        } catch (error) {}
+        } catch (error) {
+          console.error("Failed to parse current_selection", error)
+        }
       }
 
       const [cityKey, venueKey, eventKey, currentUrl, currentLabel] = await Promise.all([
@@ -444,7 +483,9 @@ export default {
       }
 
       const keyValues = await Promise.all(keys.map((key) => env.RUFF_KV.get(key)))
-      const lookup = Object.fromEntries(keys.map((key, i) => [key, parseInt(keyValues[i] || "0", 10)]))
+      const lookup = Object.fromEntries(
+        keys.map((key, i) => [key, parseInt(keyValues[i] || "0", 10)])
+      )
 
       for (const [cityKey, city] of Object.entries(config)) {
         stats.allTime.cityCounts[cityKey] = lookup[`all_scan_city_${cityKey}`] || 0
@@ -520,6 +561,58 @@ export default {
       return lines.join("\n")
     }
 
+    function buildStatsTable(stats) {
+      const lines = []
+
+      lines.push("🐾 Ruff Beacon Stats")
+      lines.push("")
+      lines.push(`All-time total : ${stats.allTime.total}`)
+      lines.push(`Session total  : ${stats.session.total}`)
+      lines.push(`Last scan UTC  : ${stats.lastScanAt || "None"}`)
+      lines.push(`Last target    : ${stats.lastScanLabel || FALLBACK_LABEL}`)
+      if (stats.lastScanUrl) lines.push(`Last URL       : ${stats.lastScanUrl}`)
+
+      lines.push("")
+      lines.push("CITY")
+      lines.push(`${pad("Name", 22)} ${pad("All", 6)} ${pad("Session", 7)}`)
+      lines.push(`${"-".repeat(22)} ${"-".repeat(6)} ${"-".repeat(7)}`)
+      for (const [cityKey, city] of Object.entries(config)) {
+        lines.push(
+          `${pad(`${city.emoji} ${city.label}`, 22)} ${pad(stats.allTime.cityCounts[cityKey] || 0, 6)} ${pad(stats.session.cityCounts[cityKey] || 0, 7)}`
+        )
+      }
+
+      lines.push("")
+      lines.push("VENUE")
+      lines.push(`${pad("Venue", 34)} ${pad("All", 6)} ${pad("Session", 7)}`)
+      lines.push(`${"-".repeat(34)} ${"-".repeat(6)} ${"-".repeat(7)}`)
+      for (const [cityKey, city] of Object.entries(config)) {
+        for (const [venueKey, venue] of Object.entries(city.venues)) {
+          const key = `${cityKey}_${venueKey}`
+          lines.push(
+            `${pad(`${venue.emoji} ${city.label} → ${venue.label}`, 34)} ${pad(stats.allTime.venueCounts[key]?.count || 0, 6)} ${pad(stats.session.venueCounts[key]?.count || 0, 7)}`
+          )
+        }
+      }
+
+      lines.push("")
+      lines.push("EVENT")
+      lines.push(`${pad("Event", 46)} ${pad("All", 6)} ${pad("Session", 7)}`)
+      lines.push(`${"-".repeat(46)} ${"-".repeat(6)} ${"-".repeat(7)}`)
+      for (const [cityKey, city] of Object.entries(config)) {
+        for (const [venueKey, venue] of Object.entries(city.venues)) {
+          for (const [eventKey, event] of Object.entries(venue.events)) {
+            const key = `${cityKey}_${venueKey}_${eventKey}`
+            lines.push(
+              `${pad(`${event.emoji} ${city.label} → ${venue.label} → ${event.label}`, 46)} ${pad(stats.allTime.eventCounts[key]?.count || 0, 6)} ${pad(stats.session.eventCounts[key]?.count || 0, 7)}`
+            )
+          }
+        }
+      }
+
+      return `<pre>${escapeHtml(lines.join("\n"))}</pre>`
+    }
+
     async function resetSessionCounts() {
       const puts = [env.RUFF_KV.put("session_scan_total", "0")]
 
@@ -547,168 +640,195 @@ export default {
       return new Response("Method not allowed", { status: 405 })
     }
 
-    const update = await request.json()
-    const message = update?.message?.text?.trim() || ""
-    const chatId = update?.message?.chat?.id
-    const callback = update?.callback_query
-    const callbackData = callback?.data
-    const callbackChatId = callback?.message?.chat?.id
-    const callbackMessageId = callback?.message?.message_id
-    const callbackId = callback?.id
+    try {
+      const update = await request.json()
+      const message = update?.message?.text?.trim() || ""
+      const chatId = update?.message?.chat?.id
+      const callback = update?.callback_query
+      const callbackData = callback?.data
+      const callbackChatId = callback?.message?.chat?.id
+      const callbackMessageId = callback?.message?.message_id
+      const callbackId = callback?.id
 
-    if (chatId && chatId !== allowedChatId) {
-      return new Response("forbidden", { status: 403 })
-    }
+      if (chatId && chatId !== allowedChatId) {
+        return new Response("forbidden", { status: 403 })
+      }
 
-    if (callbackChatId && callbackChatId !== allowedChatId) {
-      return new Response("forbidden", { status: 403 })
-    }
+      if (callbackChatId && callbackChatId !== allowedChatId) {
+        return new Response("forbidden", { status: 403 })
+      }
 
-    if (callbackData) {
-      const current = await getCurrentSelection()
+      if (callbackData) {
+        const current = await getCurrentSelection()
 
-      if (callbackData === "refresh" || callbackData === "nav:cities") {
-        if (callbackChatId && callbackMessageId) {
-          await editMessage(callbackChatId, callbackMessageId, cityPanelText(current.currentLabel), cityKeyboard())
-        }
-      } else if (callbackData === "set:fallback") {
-        const saved = await saveFallbackSelection()
-        if (callbackChatId && callbackMessageId) {
-          await renderSavedSelection(
-            callbackChatId,
-            callbackMessageId,
-            "✅ Ruff beacon updated\n\n" +
-              `Redirect:\n${saved.currentUrl}\n\n` +
-              `${saved.currentLabel}`
-          )
-        }
-      } else if (callbackData.startsWith("city:")) {
-        const [, cityKey] = callbackData.split(":")
-        if (getCity(cityKey) && callbackChatId && callbackMessageId) {
-          await editMessage(callbackChatId, callbackMessageId, venuePanelText(cityKey, current.currentLabel), venueKeyboard(cityKey))
-        }
-      } else if (callbackData.startsWith("venue:")) {
-        const [, cityKey, venueKey] = callbackData.split(":")
-        if (getVenue(cityKey, venueKey) && callbackChatId && callbackMessageId) {
-          await editMessage(callbackChatId, callbackMessageId, eventPanelText(cityKey, venueKey, current.currentLabel), eventKeyboard(cityKey, venueKey))
-        }
-      } else if (callbackData.startsWith("nav:venues:")) {
-        const [, , cityKey] = callbackData.split(":")
-        if (getCity(cityKey) && callbackChatId && callbackMessageId) {
-          await editMessage(callbackChatId, callbackMessageId, venuePanelText(cityKey, current.currentLabel), venueKeyboard(cityKey))
-        }
-      } else if (callbackData.startsWith("event:")) {
-        const [, cityKey, venueKey, eventKey] = callbackData.split(":")
-        const saved = await saveSelection(cityKey, venueKey, eventKey)
+        if (callbackData === "refresh" || callbackData === "nav:cities") {
+          if (callbackChatId && callbackMessageId) {
+            await editMessage(
+              callbackChatId,
+              callbackMessageId,
+              cityPanelText(current.currentLabel),
+              cityKeyboard()
+            )
+          }
+        } else if (callbackData === "set:fallback") {
+          const saved = await saveFallbackSelection()
+          if (callbackChatId && callbackMessageId) {
+            await renderSavedSelection(
+              callbackChatId,
+              callbackMessageId,
+              "✅ Ruff beacon updated\n\n" +
+                `Redirect:\n${saved.currentUrl}\n\n` +
+                `${saved.currentLabel}`
+            )
+          }
+        } else if (callbackData.startsWith("city:")) {
+          const [, cityKey] = callbackData.split(":")
+          if (getCity(cityKey) && callbackChatId && callbackMessageId) {
+            await editMessage(
+              callbackChatId,
+              callbackMessageId,
+              venuePanelText(cityKey, current.currentLabel),
+              venueKeyboard(cityKey)
+            )
+          }
+        } else if (callbackData.startsWith("venue:")) {
+          const [, cityKey, venueKey] = callbackData.split(":")
+          if (getVenue(cityKey, venueKey) && callbackChatId && callbackMessageId) {
+            await editMessage(
+              callbackChatId,
+              callbackMessageId,
+              eventPanelText(cityKey, venueKey, current.currentLabel),
+              eventKeyboard(cityKey, venueKey)
+            )
+          }
+        } else if (callbackData.startsWith("nav:venues:")) {
+          const [, , cityKey] = callbackData.split(":")
+          if (getCity(cityKey) && callbackChatId && callbackMessageId) {
+            await editMessage(
+              callbackChatId,
+              callbackMessageId,
+              venuePanelText(cityKey, current.currentLabel),
+              venueKeyboard(cityKey)
+            )
+          }
+        } else if (callbackData.startsWith("event:")) {
+          const [, cityKey, venueKey, eventKey] = callbackData.split(":")
+          const saved = await saveSelection(cityKey, venueKey, eventKey)
 
-        if (saved && callbackChatId && callbackMessageId) {
-          await renderSavedSelection(
-            callbackChatId,
-            callbackMessageId,
-            selectionSavedText(saved.city, saved.venue, saved.event, saved.label)
-          )
+          if (saved && callbackChatId && callbackMessageId) {
+            await renderSavedSelection(
+              callbackChatId,
+              callbackMessageId,
+              selectionSavedText(saved.city, saved.venue, saved.event, saved.label)
+            )
+          }
+        } else if (callbackData === "show_counts") {
+          const stats = await getStatsData()
+          if (callbackChatId) {
+            await sendMessage(callbackChatId, buildStatsTable(stats), undefined, "HTML")
+          }
+        } else if (callbackData === "reset_counts_prompt") {
+          if (callbackChatId) {
+            await sendMessage(
+              callbackChatId,
+              "⚠️ Reset session counters?\n\n" +
+                "This will reset the session total plus all session city, venue, and event counters back to 0.\n" +
+                "All-time counters will remain unchanged.",
+              replyKeyboards.resetConfirm
+            )
+          }
+        } else if (callbackData === "reset_counts_confirm") {
+          await resetSessionCounts()
+          if (callbackChatId) {
+            await sendMessage(callbackChatId, "🧹 Session counters reset to 0. All-time counters were kept.")
+          }
+        } else if (callbackData === "reset_counts_cancel") {
+          if (callbackChatId) await sendMessage(callbackChatId, "Reset canceled.")
         }
-      } else if (callbackData === "show_counts") {
+
+        if (callbackId) {
+          let callbackText = "🐾 Updated"
+          if (callbackData === "set:fallback") callbackText = "🐾 Fallback selected"
+          if (callbackData === "show_counts") callbackText = "📊 Displaying stats"
+          if (callbackData === "reset_counts_prompt") callbackText = "⚠️ Confirm reset in chat"
+          if (callbackData === "reset_counts_confirm") callbackText = "🧹 Session reset"
+          if (callbackData === "reset_counts_cancel") callbackText = "Reset canceled"
+          await answerCallback(callbackId, callbackText)
+        }
+
+        return new Response("ok")
+      }
+
+      if (!chatId) {
+        return new Response("ok")
+      }
+
+      if (message === "/start" || message === "/beacon") {
+        const current = await getCurrentSelection()
+        await sendMessage(chatId, cityPanelText(current.currentLabel), cityKeyboard())
+        return new Response("ok")
+      }
+
+      if (message === "/status") {
+        const current = await getCurrentSelection()
+        const lastScanAt = await env.RUFF_KV.get("last_scan_at")
+
+        await sendMessage(
+          chatId,
+          "🐾 Ruff Beacon Control\n\n" +
+            `Version: ${WORKER_VERSION}\n` +
+            `Deployed (UTC): ${DEPLOYED_AT}\n\n` +
+            `Current redirect:\n${current.currentLabel}\n\n` +
+            `URL:\n${current.currentUrl}\n\n` +
+            `Last scan (Zulu): ${lastScanAt || "None"}`
+        )
+        return new Response("ok")
+      }
+
+      if (message === "/count") {
+        const [allTotalRaw, sessionTotalRaw] = await Promise.all([
+          env.RUFF_KV.get("all_scan_total"),
+          env.RUFF_KV.get("session_scan_total")
+        ])
+
+        await sendMessage(
+          chatId,
+          `🐾 Ruff Scan Totals\n\nAll-time: ${parseInt(allTotalRaw || "0", 10)}\nSession: ${parseInt(sessionTotalRaw || "0", 10)}`
+        )
+        return new Response("ok")
+      }
+
+      if (message === "/stats") {
         const stats = await getStatsData()
-        if (callbackChatId) await sendMessage(callbackChatId, buildStatsText(stats))
-      } else if (callbackData === "reset_counts_prompt") {
-        if (callbackChatId) {
-          await sendMessage(
-            callbackChatId,
-            "⚠️ Reset session counters?\n\n" +
-              "This will reset the session total plus all session city, venue, and event counters back to 0.\n" +
-              "All-time counters will remain unchanged.",
-            replyKeyboards.resetConfirm
-          )
-        }
-      } else if (callbackData === "reset_counts_confirm") {
-        await resetSessionCounts()
-        if (callbackChatId) {
-          await sendMessage(callbackChatId, "🧹 Session counters reset to 0. All-time counters were kept.")
-        }
-      } else if (callbackData === "reset_counts_cancel") {
-        if (callbackChatId) await sendMessage(callbackChatId, "Reset canceled.")
+        await sendMessage(chatId, buildStatsTable(stats), undefined, "HTML")
+        return new Response("ok")
       }
 
-      if (callbackId) {
-        let callbackText = "🐾 Updated"
-        if (callbackData === "set:fallback") callbackText = "🐾 Fallback selected"
-        if (callbackData === "show_counts") callbackText = "📊 Displaying stats"
-        if (callbackData === "reset_counts_prompt") callbackText = "⚠️ Confirm reset in chat"
-        if (callbackData === "reset_counts_confirm") callbackText = "🧹 Session reset"
-        if (callbackData === "reset_counts_cancel") callbackText = "Reset canceled"
-        await answerCallback(callbackId, callbackText)
+      if (message === "/reset") {
+        await sendMessage(
+          chatId,
+          "⚠️ Reset session counters?\n\n" +
+            "This will reset the session total plus all session city, venue, and event counters back to 0.\n" +
+            "All-time counters will remain unchanged.",
+          replyKeyboards.resetConfirm
+        )
+        return new Response("ok")
       }
 
-      return new Response("ok")
-    }
-
-    if (!chatId) {
-      return new Response("ok")
-    }
-
-    if (message === "/start" || message === "/beacon") {
-      const current = await getCurrentSelection()
-      await sendMessage(chatId, cityPanelText(current.currentLabel), cityKeyboard())
-      return new Response("ok")
-    }
-
-    if (message === "/status") {
-      const current = await getCurrentSelection()
-      const lastScanAt = await env.RUFF_KV.get("last_scan_at")
-
       await sendMessage(
         chatId,
-        "🐾 Ruff Beacon Control\n\n" +
-          `Version: ${WORKER_VERSION}\n` +
-          `Deployed (UTC): ${DEPLOYED_AT}\n\n` +
-          `Current redirect:\n${current.currentLabel}\n\n` +
-          `URL:\n${current.currentUrl}\n\n` +
-          `Last scan (Zulu): ${lastScanAt || "None"}`
+        "Commands:\n\n" +
+          "/beacon - open the city/venue/event selector\n" +
+          "/status - show current redirect and last scan\n" +
+          "/count - show all-time and session totals\n" +
+          "/stats - show all counters\n" +
+          "/reset - reset session counters only"
       )
+
       return new Response("ok")
+    } catch (error) {
+      console.error("Worker error", error)
+      return new Response("Internal error", { status: 500 })
     }
-
-    if (message === "/count") {
-      const [allTotalRaw, sessionTotalRaw] = await Promise.all([
-        env.RUFF_KV.get("all_scan_total"),
-        env.RUFF_KV.get("session_scan_total")
-      ])
-
-      await sendMessage(
-        chatId,
-        `🐾 Ruff Scan Totals\n\nAll-time: ${parseInt(allTotalRaw || "0", 10)}\nSession: ${parseInt(sessionTotalRaw || "0", 10)}`
-      )
-      return new Response("ok")
-    }
-
-    if (message === "/stats") {
-      const stats = await getStatsData()
-      await sendMessage(chatId, buildStatsText(stats))
-      return new Response("ok")
-    }
-
-    if (message === "/reset") {
-      await sendMessage(
-        chatId,
-        "⚠️ Reset session counters?\n\n" +
-          "This will reset the session total plus all session city, venue, and event counters back to 0.\n" +
-          "All-time counters will remain unchanged.",
-        replyKeyboards.resetConfirm
-      )
-      return new Response("ok")
-    }
-
-    await sendMessage(
-      chatId,
-      "Commands:\n\n" +
-        "/beacon - open the city/venue/event selector\n" +
-        "/status - show current redirect and last scan\n" +
-        "/count - show all-time and session totals\n" +
-        "/stats - show all counters\n" +
-        "/reset - reset session counters only"
-    )
-
-    return new Response("ok")
   }
 }
