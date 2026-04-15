@@ -9,7 +9,7 @@ bio: true
 icon: ":dog:"
 ---
 <div style="float:left; max-width:300px; margin:0 20px 20px 0; text-align:center;">
-  <img src="/static/ruff-atlanta-eagle.jpeg"
+  <img src="/assets/ruff-atlanta-eagle.jpeg"
        alt="Ruff at the Atlanta Eagle"
        style="width:100%; border-radius:10px;" />
   <p style="font-size:0.85em; opacity:0.8; margin-top:6px;">
