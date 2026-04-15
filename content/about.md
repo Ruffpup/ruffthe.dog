@@ -8,6 +8,14 @@ name: Ruff
 bio: true
 icon: ":dog:"
 ---
+<div style="float:left; max-width:300px; margin:0 20px 20px 0; text-align:center;">
+  <img src="/assets/ruff-atlanta-eagle.jpeg"
+       alt="Ruff at the Atlanta Eagle"
+       style="width:100%; border-radius:10px;" />
+  <p style="font-size:0.85em; opacity:0.8; margin-top:6px;">
+    Ruff at the Atlanta Eagle. Chaos corgi energy, right at home.
+  </p>
+</div>
 
 Ruff is an Atlanta-based pup, educator, and community builder with more than two decades of lived experience in kink, leather, and pup play. A former Rocky Mountain Leather Sir (2012), he carries a deep respect for leather history, protocol, and tradition while embracing the ways kink continues to evolve toward more intentional, consent-forward, and emotionally aware connections. Ruff’s approach blends old-guard leather values with modern conversations about communication, autonomy, and care, creating a leadership style that is both rooted in tradition and responsive to the communities of today.
 
