@@ -7,7 +7,7 @@ main:
   url: /
   weight: 10
 - name: Platform
-  url: /platform/
+  url: /ga-puppy-platform/
   weight: 20
 - name: Classes
   url: /classes/
