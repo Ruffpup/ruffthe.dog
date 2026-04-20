@@ -9,7 +9,7 @@ bio: true
 icon: ":dog:"
 slug: "ga-puppy-platform"
 ---
-RRuff did not create himself.
+Ruff did not create himself.
 
 He rediscovered himself.
 
