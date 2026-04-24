@@ -2,7 +2,7 @@
 title: "Why I Teach"
 subtitle: "Passing knowledge forward in the pup and kink community."
 summary: "Teaching in kink spaces is not about authority. It is about mentorship, curiosity, and making space for the next pup to explore safely."
-date: 2026-04-25
+date: 2026-04-24
 cardimage: blog15_card.jpeg
 featureimage: blog15.jpeg
 caption: "Sharing knowledge is another way of building pack."
