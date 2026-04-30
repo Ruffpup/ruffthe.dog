@@ -2,7 +2,7 @@
 title: "I’m Running for Georgia Pup 2026"
 subtitle: "And I’m doing it #UnapologeticallyPuppy."
 summary: "Ruff announces his run for Georgia Pup 2026 and shares the heart behind his platform: visibility, connection, and care through authentic pup identity."
-date: 2026-05-01
+date: 2026-05-10
 cardimage: blog18_card.jpeg
 featureimage: blog18.jpeg
 caption: "Ruff, seen and unapologetically himself."
