@@ -2,7 +2,7 @@
 title: "What #UnapologeticallyPuppy Really Means"
 subtitle: "Visibility, authenticity, and the responsibility of being seen."
 summary: "Being unapologetically puppy is not about being loud or rebellious. It is about authenticity, joy, and helping create space for others to be themselves."
-date: 2026-05-02
+date: 2026-05-01
 cardimage: blog16_card.jpeg
 featureimage: blog16.jpeg
 caption: "Chaos Corgi Ruff."
