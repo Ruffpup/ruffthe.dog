@@ -2,7 +2,7 @@
 title: "Misconceptions About Pup Play"
 subtitle: "What people often miss underneath the barking, gear, and chaos."
 summary: "A reflection on headspace, belonging, emotional safety, and the deeper realities of pup play beyond the stereotypes."
-date: 2026-05-17
+date: 2026-05-20
 cardimage: blog21_card.jpeg
 featureimage: blog21.jpeg
 caption: "Sometimes the barking is the point. Sometimes the point is finally feeling safe enough to exhale."

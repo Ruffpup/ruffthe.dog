@@ -3,6 +3,8 @@ title: "Misconceptions About Pup Play"
 subtitle: "What people often miss underneath the barking, gear, and chaos."
 summary: "Pup play is often misunderstood as only being about sex or roleplay, but for many people it is also about connection, trust, vulnerability, grounding, and belonging."
 date: 2026-05-17
+cardimage: blog18_card.jpeg
+featureimage: blog18.jpeg
 slug: "misconceptions-about-pup-play"
 tags:
   - Pup Play
