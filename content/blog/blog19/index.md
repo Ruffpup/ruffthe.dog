@@ -8,6 +8,8 @@ featureimage: blog19.jpeg
 caption: "Still standing. Still Ruff."
 slug: "i-didnt-lose-who-i-am"
 alt: "Ruff reflecting on identity and resilience after unexpected change"
+authors:
+  - Ruff: ruff_face.png
 ---
 
 This week didn’t go the way I expected.

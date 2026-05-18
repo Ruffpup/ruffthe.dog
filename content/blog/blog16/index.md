@@ -8,6 +8,8 @@ featureimage: blog16.jpeg
 caption: "Chaos Corgi Ruff."
 slug: "what-unapologeticallypuppy-means"
 alt: "Ruff pup identity and authenticity in the community"
+authors:
+  - Ruff: ruff_face.png
 ---
 
 Over the past year I have used the phrase #UnapologeticallyPuppy quite a bit. People sometimes ask me what it means, and the answer is not always as simple as a slogan or a hashtag. For me it is not about being loud or rebellious, and it is not about demanding attention or trying to stand out. It is something quieter than that.

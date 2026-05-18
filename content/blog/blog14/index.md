@@ -8,6 +8,8 @@ featureimage: blog14.jpeg
 caption: "Ruff with pups in Atlanta. Pack is not about hierarchy. It is about belonging."
 slug: "what-pack-means"
 alt: "Ruff wearing a pup hood and collar with other pups in a bar setting"
+authors:
+  - Ruff: ruff_face.png
 ---
 
 Pack is one of those words that people outside the pup community sometimes misunderstand. They hear it and assume it means hierarchy, ownership, or strict roles. Sometimes it can include those things, but for most of us pack means something much simpler. It means not being alone.

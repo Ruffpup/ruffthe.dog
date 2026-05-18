@@ -13,7 +13,7 @@ tags:
   - Furry Weekend Atlanta
   - Pup Camp
 authors:
-  - Ruff
+  - Ruff: ruff_face.png
 ---
 
 # Misconceptions About Pup Play

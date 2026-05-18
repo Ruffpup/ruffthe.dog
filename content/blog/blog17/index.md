@@ -8,6 +8,8 @@ featureimage: blog17.jpeg
 caption: "Spring Training at Parliament Resort."
 slug: "i-brought-ruff-with-me"
 alt: "Ruff reflecting on growth, teaching, and community at Spring Training"
+authors:
+  - Ruff: ruff_face.png
 ---
 
 I came back to the place where I found Ruff, and somewhere between stepping onto the grounds at Parliament Resort, feeling the sun on my skin, hearing music carry across the pool, and seeing familiar faces moving through the space, something settled in me in a way it hadn’t before.

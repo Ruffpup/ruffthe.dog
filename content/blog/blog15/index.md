@@ -8,6 +8,8 @@ featureimage: blog15.jpeg
 caption: "Sharing knowledge is another way of building pack."
 slug: "why-i-teach"
 alt: "Ruff teaching a class in the pup and kink community"
+authors:
+  - Ruff: ruff_face.png
 ---
 
 Every once in a while someone asks me why I spend time teaching classes in the pup and kink community. The question is usually asked with genuine curiosity. Some people assume it must be about recognition or visibility. Others assume it is about experience or authority.
