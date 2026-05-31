@@ -203,6 +203,25 @@ export default {
             }
           }
         }
+      },
+
+      cruise: {
+        label: "Cruise",
+        emoji: "🚢",
+        venues: {
+          brilliant_lady: {
+            label: "Brilliant Lady",
+            emoji: "🛳️",
+            type: "ship",
+            events: {
+              virgin_voyages_alaska: {
+                label: "Virgin Voyages Alaska",
+                emoji: "❄️",
+                url: "https://ruffthe.dog/places/miscellaneous/cruises/virgin_voyages/"
+              }
+            }
+          }
+        }
       }
     }
 
