@@ -27,11 +27,17 @@ Then check their phone again.
 
 Welcome to Ruff’s little corner of the internet.
 
+> 🐾 **New here?** I'm currently running for Georgia Pup 2026. You can read more about my platform and journey here:
+>
+> https://ruffthe.dog/blog/running-for-georgia-pup-2026/
+
 ## Wait… who is Ruff?
 
 Ruff is the chaos corgi behind **[ruffthe.dog](https://ruffthe.dog)**.
 
-I travel a lot between communities around the world, especially Atlanta and London, and I love meeting people in unexpected places. Sometimes that happens at pup events, sometimes at bars, and sometimes in the middle of an airport or a random conversation that starts out of nowhere.
+I travel between communities around the world, especially Atlanta and London, teaching classes, building connections, and helping people discover that there is no single "right" way to be a pup.
+
+What started as a personal journey eventually became something bigger: visibility, education, stewardship, and creating spaces where people feel welcome enough to be themselves.
 
 The chip you scanned is just my slightly unusual way of saying hello.
 
@@ -43,15 +49,19 @@ The implant in my hand is a tiny NFC tag. Your phone briefly powered it and it s
 
 No battery.  
 No tracking.  
+No secret government puppy surveillance.
+
 Just a tiny bit of technology and a fun conversation starter.
 
-And honestly, it’s a great way to make sure people remember meeting Ruff.
+Every tap represents a moment of connection.
+
+And communities are built one interaction at a time.
 
 ## If we just met
 
 I’m glad we crossed paths.
 
-Whether it was at an event, a bar, a dance floor, or somewhere completely random, I always enjoy the small moments where strangers turn into connections.
+Whether it was at an event, a bar, a dance floor, a class, or somewhere completely random, I always enjoy the small moments where strangers turn into connections.
 
 Sometimes all it takes is a conversation.
 

@@ -22,6 +22,10 @@ And yes, the moment where people look back and forth between my hand and their p
 
 Welcome to BLUF Night at the Atlanta Eagle.
 
+> 🐾 Curious about Ruff? I'm currently running for Georgia Pup 2026.
+>
+> https://ruffthe.dog/blog/running-for-georgia-pup-2026/
+
 ## What is BLUF Night?
 
 BLUF stands for **Breeches and Leather Uniform Fanclub**.
@@ -30,10 +34,10 @@ It’s one of the Eagle’s nights where leather, uniforms, and gear culture tak
 
 If you walked in tonight and saw:
 
-- leather uniforms  
-- rubber gear  
-- harnesses and boots  
-- pups wandering around the bar  
+- leather uniforms
+- rubber gear
+- harnesses and boots
+- pups wandering around the bar
 
 then you were in exactly the right place.
 
@@ -43,32 +47,43 @@ And if you scanned my hand, you probably found the chaos corgi in the room.
 
 Ruff is the chaos corgi behind **[ruffthe.dog](https://ruffthe.dog)**.
 
-Part pup, part traveler, part curious human who enjoys blurring the line between technology, identity, and connection.
+Part pup, part traveler, part educator, and part curious human who enjoys blurring the line between technology, identity, and connection.
 
 You’ll usually find me:
 
-- at pup nights around Atlanta  
-- roaming BLUF nights at the Eagle  
-- traveling between communities like London, Montreal, and Sydney  
-- teaching classes about kink, safety, rope, and pup culture  
+- at pup nights around Atlanta
+- roaming BLUF nights at the Eagle
+- traveling between communities like London, Montreal, and Sydney
+- teaching classes about kink, safety, rope, and pup culture
+- helping newcomers feel welcome in community spaces
 - or creating slightly weird moments like the one you just experienced
+
+One of the things I love most about nights like this is the overlap between communities. Leather, uniforms, pups, handlers, rubber, and people who are simply curious all sharing the same space.
+
+That overlap is where some of the best connections happen.
 
 ## Why the chip?
 
-Because you’re never going to forget meeting someone whose contact info lives in their hand.
+Because you're never going to forget meeting someone whose contact info lives in their hand.
 
 The chip you scanned is an NFC implant. Your phone briefly powered it, and it sent you here.
 
 No battery.  
 No tracking.  
+No secret leather-dog surveillance network.
+
 Just a tiny piece of tech and a very effective conversation starter.
+
+Every scan represents a moment of connection.
+
+And communities are built one interaction at a time.
 
 ## One more thing
 
 If you see me around the Eagle again, come say hi.
 
-BLUF nights are about gear, connection, and community. If you made it here tonight, you’re already part of that moment.
+BLUF nights are about gear, connection, and community. If you made it here tonight, you're already part of that moment.
 
 And if someone asks how you got my info tonight, you already know what to tell them.
 
-**“I scanned his hand.”** 🐾
+**"I scanned his hand."** 🐾
