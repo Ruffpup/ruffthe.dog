@@ -216,6 +216,11 @@ export default {
                 label: "Spring Training",
                 emoji: "🐶",
                 url: "https://ruffthe.dog/places/augusta/parliamentresort/spring-training/"
+              },
+              dog_days: {
+                label: "Dog Days",
+                emoji: "🏆",
+                url: "https://ruffthe.dog/places/augusta/parliamentresort/dog-days/"
               }
             }
           }
@@ -553,54 +558,6 @@ export default {
       }
 
       return stats
-    }
-
-    function buildStatsText(stats) {
-      const lines = [
-        "🐾 Ruff Beacon Stats",
-        "",
-        `All-time total: ${stats.allTime.total}`,
-        `Session total: ${stats.session.total}`,
-        `Last scan (Zulu): ${stats.lastScanAt || "None"}`,
-        `Last target: ${stats.lastScanLabel || FALLBACK_LABEL}`,
-        stats.lastScanUrl ? `Last URL: ${stats.lastScanUrl}` : null,
-        "",
-        "By city:"
-      ].filter(Boolean)
-
-      for (const [cityKey, city] of Object.entries(config)) {
-        lines.push(
-          `${city.emoji} ${city.label}: all-time ${stats.allTime.cityCounts[cityKey] || 0} | session ${stats.session.cityCounts[cityKey] || 0}`
-        )
-      }
-
-      lines.push("", "By venue:")
-
-      for (const [cityKey, city] of Object.entries(config)) {
-        for (const [venueKey, venue] of Object.entries(city.venues)) {
-          const key = `${cityKey}_${venueKey}`
-
-          lines.push(
-            `${venue.emoji} ${city.label} → ${venue.label}: all-time ${stats.allTime.venueCounts[key]?.count || 0} | session ${stats.session.venueCounts[key]?.count || 0}`
-          )
-        }
-      }
-
-      lines.push("", "By event:")
-
-      for (const [cityKey, city] of Object.entries(config)) {
-        for (const [venueKey, venue] of Object.entries(city.venues)) {
-          for (const [eventKey, event] of Object.entries(venue.events)) {
-            const key = `${cityKey}_${venueKey}_${eventKey}`
-
-            lines.push(
-              `${event.emoji} ${city.label} → ${venue.label} → ${event.label}: all-time ${stats.allTime.eventCounts[key]?.count || 0} | session ${stats.session.eventCounts[key]?.count || 0}`
-            )
-          }
-        }
-      }
-
-      return lines.join("\n")
     }
 
     function buildStatsTable(stats) {

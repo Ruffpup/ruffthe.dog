@@ -22,6 +22,12 @@ And yes, that moment where people look back and forth between my hand and their 
 
 Welcome to **Pup Tea at the Atlanta Eagle.**
 
+> 🐾 I'm currently running for Georgia Pup 2026.
+>
+> Learn more about my platform and journey:
+>
+> https://ruffthe.dog/blog/running-for-georgia-pup-2026/
+
 ## What is Pup Tea?
 
 Pup Tea is one of Atlanta’s most relaxed and welcoming pup gatherings.
@@ -30,10 +36,10 @@ It usually happens on a Sunday afternoon at **The Eagle Atlanta**, where pups, h
 
 You’ll see things like:
 
-- pups in full gear  
-- pups in partial gear  
-- curious humans asking questions  
-- people meeting their first pup  
+- pups in full gear
+- pups in partial gear
+- curious humans asking questions
+- people meeting their first pup
 - a lot of wagging and laughter
 
 It’s one of the easiest places in Atlanta to meet the pup community.
@@ -44,33 +50,48 @@ And if you scanned my hand today, congratulations, you just unlocked the Ruff ea
 
 Ruff is the chaos corgi behind **[ruffthe.dog](https://ruffthe.dog)**.
 
-Part pup, part traveler, part curious human who enjoys blurring the line between technology, identity, and connection.
+Part pup, part traveler, part educator, and part curious human who enjoys blurring the line between technology, identity, and connection.
 
 You’ll usually find me:
 
-- at pup events around Atlanta  
-- traveling between pup communities like London, Montreal, and Sydney  
-- teaching classes about kink safety, rope, electro play, and pup culture  
+- at pup events around Atlanta
+- traveling between pup communities like London, Montreal, and Sydney
+- teaching classes about kink safety, rope, electro play, and pup culture
+- mentoring and encouraging newcomers
 - building weird little tech experiments like the one you just experienced
 
 Sometimes I’m also teaching here at Pup Tea.
 
+One of the things I love most about Pup Tea is that it reminds people they don't have to have everything figured out before they show up.
+
+Everyone was new once.
+
 ## Why the chip?
 
-Because you’re never going to forget meeting someone whose contact info lives in their hand.
+Because you're never going to forget meeting someone whose contact info lives in their hand.
 
 The chip you scanned is an **NFC implant**. Your phone briefly powered it, and it sent you here.
 
 No battery.  
 No tracking.  
+No secret pup operating system.
+
 Just a tiny piece of tech and a very effective conversation starter.
+
+Every tap represents a moment of connection.
+
+And communities are built one interaction at a time.
 
 ## One more thing
 
-If today was your **first Pup Tea**, welcome to the community.
+If today was your **first Pup Tea**, welcome.
+
+Seriously.
+
+Whether you're wearing a hood, thinking about buying your first one, exploring kink, or simply curious about the community, you're welcome here.
 
 If you see me around again, come say hi.
 
 And if someone asks how you got my info today, you already know what to tell them.
 
-**“I scanned his hand.”** 🐾
+**"I scanned his hand."** 🐾
