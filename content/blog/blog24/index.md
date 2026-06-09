@@ -2,7 +2,7 @@
 title: "Running for Georgia Pup 2026"
 subtitle: "I’m finally stepping into this fully as myself."
 summary: "A reflection on rediscovery, visibility, stewardship, and why running for Georgia Pup 2026 feels deeply personal."
-date: 2026-06-16
+date: 2026-06-09
 cardimage: blog24_card.jpeg
 featureimage: blog24.jpeg
 caption: "For a long time, Ruff existed in carefully controlled spaces."

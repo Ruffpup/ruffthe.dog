@@ -9,13 +9,14 @@ bio: true
 icon: ":dog:"
 slug: "ga-puppy-platform"
 ---
+
 Ruff did not create himself.
 
 He rediscovered himself.
 
-What started as something quiet, something playful and easy to hide, became something much bigger. Through change, growth, and community, Ruff found his way back to a version of himself that had always been there.
+What began as something quiet, playful, and easy to hide eventually became impossible to ignore. Through change, growth, and community, Ruff found his way back to a version of himself that had always been there.
 
-And more importantly, he stopped hiding from him.
+And once he stopped hiding from himself, he stopped hiding from everyone else.
 
 Over the past year, that rediscovery has become more than personal. It has become connection. It has become healing. It has become that moment where you look around a room and realize you are not alone.
 
@@ -27,13 +28,15 @@ That is the heart of this platform.
 
 ## #UnapologeticallyPuppy
 
-At the center of everything Ruff does is the belief in living **#UnapologeticallyPuppy**.
+At the center of everything Ruff does is the belief in living **#UnapologetallyPuppy**.
 
 That does not mean being loud just to be loud or chaotic just for the sake of it, even if he is a chaos corgi. It means showing up fully as yourself without shrinking, without filtering, and without asking permission to exist.
 
 It means leaning into joy, curiosity, instinct, and play while staying grounded in consent, communication, and care.
 
-More than anything, it is an invitation. An invitation to be seen, to feel safe enough to be a little vulnerable, and to realize you do not have to earn your place in the pack. You already belong.
+More than anything, it is an invitation. An invitation to be seen, to feel safe enough to be a little vulnerable, and to realize you do not have to earn your place in the pack.
+
+You already belong.
 
 ---
 
@@ -45,11 +48,15 @@ It shows up in visibility. Not in a way that demands attention, but in a way tha
 
 It shows up in education. Ruff teaches, but not in a way that feels like a barrier to entry. His classes are built around participation, curiosity, and real-world experience. Gear care, pup culture, rope fundamentals, responsible play. All of it grounded in the idea that learning should feel approachable, not something you have to prove yourself worthy of.
 
+It also shows up in stewardship. In helping newcomers find their footing, preserving the traditions that came before us, supporting the spaces that allow our communities to exist, and leaving things better than we found them.
+
 And it shows up in the way he moves between spaces. Leather and pup. Structure and play. Experienced community members and people who are just starting to explore. Not as separate worlds, but as parts of the same community that benefit from being connected.
 
 Because the strongest communities are not built in circles.
 
 They are built in the overlap.
+
+Communities are built one interaction at a time.
 
 ---
 
@@ -57,9 +64,15 @@ They are built in the overlap.
 
 This is not theoretical.
 
-It is in the way Ruff teaches, the way he checks in with people, and the way he creates space for both high energy play and quiet, meaningful connection.
+It is in the way Ruff teaches, the way he checks in with people, and the way he creates space for both high-energy play and quiet, meaningful connection.
 
-Sometimes it looks like a class. Sometimes it looks like a conversation after. Sometimes it is just being present long enough for someone to feel comfortable asking a question they were not ready to ask before.
+Sometimes it looks like a class. Sometimes it looks like a conversation afterward. Sometimes it is simply being present long enough for someone to feel comfortable asking a question they were not ready to ask before.
+
+Every one of those moments matters.
+
+Because community is not built through grand gestures.
+
+It is built through consistency, care, and connection.
 
 ---
 
@@ -71,7 +84,7 @@ He is here to show that there are a lot of ways to be one.
 
 Playful or structured. Loud or quiet. Confident or still figuring it out.
 
-All of it belongs.
+All of it has a place in the pack.
 
 And when we show up as ourselves fully and without apology, we make it easier for someone else to take that first step too.
 

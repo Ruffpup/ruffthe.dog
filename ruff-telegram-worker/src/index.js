@@ -4,12 +4,29 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url)
 
-    const FALLBACK_URL = "https://ruffthe.dog/places/tap/"
-    const FALLBACK_LABEL = "🐾 Tap Fallback"
     const TAP_URL = "https://ruffthe.dog/tap"
     const allowedChatId = 1806066012
 
     const config = {
+      tapfallback: {
+        label: "Tap Fallback",
+        emoji: "🐾",
+        venues: {
+          tap: {
+            label: "Tap",
+            emoji: "📱",
+            type: "fallback",
+            events: {
+              fallback: {
+                label: "Generic Redirect",
+                emoji: "🐾",
+                url: "https://ruffthe.dog/places/tap/"
+              }
+            }
+          }
+        }
+      },
+
       atlanta: {
         label: "Atlanta",
         emoji: "🍑",
@@ -225,6 +242,29 @@ export default {
       }
     }
 
+    const getCity = (cityKey) => config?.[cityKey] || null
+    const getVenue = (cityKey, venueKey) => config?.[cityKey]?.venues?.[venueKey] || null
+    const getEvent = (cityKey, venueKey, eventKey) => config?.[cityKey]?.venues?.[venueKey]?.events?.[eventKey] || null
+
+    const getSelectionParts = (cityKey, venueKey, eventKey) => ({
+      city: getCity(cityKey),
+      venue: getVenue(cityKey, venueKey),
+      event: getEvent(cityKey, venueKey, eventKey)
+    })
+
+    const FALLBACK_CITY = "tapfallback"
+    const FALLBACK_VENUE = "tap"
+    const FALLBACK_EVENT = "fallback"
+    const FALLBACK_URL = getEvent(FALLBACK_CITY, FALLBACK_VENUE, FALLBACK_EVENT).url
+
+    const buildSelectionLabel = (cityKey, venueKey, eventKey) => {
+      const { city, venue, event } = getSelectionParts(cityKey, venueKey, eventKey)
+      if (!city || !venue || !event) return "🐾 Tap Fallback"
+      return `${city.emoji} ${city.label} → ${venue.emoji} ${venue.label} → ${event.emoji} ${event.label}`
+    }
+
+    const FALLBACK_LABEL = buildSelectionLabel(FALLBACK_CITY, FALLBACK_VENUE, FALLBACK_EVENT)
+
     const replyKeyboards = {
       resetConfirm: {
         inline_keyboard: [
@@ -301,32 +341,18 @@ export default {
       inline_keyboard: [...chunkButtons(buttons, size), ...extraRows]
     })
 
-    const getCity = (cityKey) => config?.[cityKey] || null
-    const getVenue = (cityKey, venueKey) => config?.[cityKey]?.venues?.[venueKey] || null
-    const getEvent = (cityKey, venueKey, eventKey) => config?.[cityKey]?.venues?.[venueKey]?.events?.[eventKey] || null
-
-    const getSelectionParts = (cityKey, venueKey, eventKey) => ({
-      city: getCity(cityKey),
-      venue: getVenue(cityKey, venueKey),
-      event: getEvent(cityKey, venueKey, eventKey)
-    })
-
-    const buildSelectionLabel = (cityKey, venueKey, eventKey) => {
-      const { city, venue, event } = getSelectionParts(cityKey, venueKey, eventKey)
-      if (!city || !venue || !event) return FALLBACK_LABEL
-      return `${city.emoji} ${city.label} → ${venue.emoji} ${venue.label} → ${event.emoji} ${event.label}`
-    }
-
     const panelText = (step, currentLabel, prompt) =>
       "🐾 Ruff Beacon Setup\n\n" +
       `Current redirect:\n${currentLabel}\n\n` +
       `Step ${step}: ${prompt}`
 
     const cityKeyboard = () => {
-      const buttons = Object.entries(config).map(([cityKey, city]) => ({
-        text: `${city.emoji} ${city.label}`,
-        callback_data: `city:${cityKey}`
-      }))
+      const buttons = Object.entries(config)
+        .filter(([cityKey]) => cityKey !== FALLBACK_CITY)
+        .map(([cityKey, city]) => ({
+          text: `${city.emoji} ${city.label}`,
+          callback_data: `city:${cityKey}`
+        }))
 
       return buildKeyboard(buttons, [
         [{ text: "🐾 Tap Fallback", callback_data: "set:fallback" }],
@@ -369,10 +395,12 @@ export default {
     }
 
     const cityPanelText = (currentLabel) => panelText(1, currentLabel, "Choose a city.")
+
     const venuePanelText = (cityKey, currentLabel) => {
       const city = getCity(cityKey)
       return panelText(2, currentLabel, `Choose a venue in ${city?.emoji || ""} ${city?.label || cityKey}.`)
     }
+
     const eventPanelText = (cityKey, venueKey, currentLabel) => {
       const venue = getVenue(cityKey, venueKey)
       return panelText(3, currentLabel, `Choose an event for ${venue?.emoji || ""} ${venue?.label || venueKey}.`)
@@ -399,13 +427,15 @@ export default {
 
     async function getCurrentSelection() {
       const currentSelectionRaw = await env.RUFF_KV.get("current_selection")
+
       if (currentSelectionRaw) {
         try {
           const parsed = JSON.parse(currentSelectionRaw)
+
           return {
-            cityKey: parsed.cityKey || null,
-            venueKey: parsed.venueKey || null,
-            eventKey: parsed.eventKey || null,
+            cityKey: parsed.cityKey || FALLBACK_CITY,
+            venueKey: parsed.venueKey || FALLBACK_VENUE,
+            eventKey: parsed.eventKey || FALLBACK_EVENT,
             currentUrl: parsed.currentUrl || FALLBACK_URL,
             currentLabel: parsed.currentLabel || FALLBACK_LABEL
           }
@@ -423,9 +453,9 @@ export default {
       ])
 
       return {
-        cityKey,
-        venueKey,
-        eventKey,
+        cityKey: cityKey || FALLBACK_CITY,
+        venueKey: venueKey || FALLBACK_VENUE,
+        eventKey: eventKey || FALLBACK_EVENT,
         currentUrl: currentUrl || FALLBACK_URL,
         currentLabel: currentLabel || FALLBACK_LABEL
       }
@@ -436,6 +466,7 @@ export default {
       if (!city || !venue || !event) return null
 
       const label = buildSelectionLabel(cityKey, venueKey, eventKey)
+
       const selection = {
         cityKey,
         venueKey,
@@ -457,24 +488,7 @@ export default {
     }
 
     async function saveFallbackSelection() {
-      const selection = {
-        cityKey: null,
-        venueKey: null,
-        eventKey: null,
-        currentUrl: FALLBACK_URL,
-        currentLabel: FALLBACK_LABEL
-      }
-
-      await Promise.all([
-        env.RUFF_KV.put("current_city", ""),
-        env.RUFF_KV.put("current_venue", ""),
-        env.RUFF_KV.put("current_event", ""),
-        env.RUFF_KV.put("current_url", FALLBACK_URL),
-        env.RUFF_KV.put("current_label", FALLBACK_LABEL),
-        env.RUFF_KV.put("current_selection", JSON.stringify(selection))
-      ])
-
-      return selection
+      return saveSelection(FALLBACK_CITY, FALLBACK_VENUE, FALLBACK_EVENT)
     }
 
     async function getStatsData() {
@@ -490,11 +504,13 @@ export default {
       stats.session.total = parseInt((await env.RUFF_KV.get("session_scan_total")) || "0", 10)
 
       const keys = []
+
       for (const [cityKey, city] of Object.entries(config)) {
         keys.push(`all_scan_city_${cityKey}`, `session_scan_city_${cityKey}`)
 
         for (const [venueKey, venue] of Object.entries(city.venues)) {
           keys.push(`all_scan_venue_${cityKey}_${venueKey}`, `session_scan_venue_${cityKey}_${venueKey}`)
+
           for (const [eventKey] of Object.entries(venue.events)) {
             keys.push(`all_scan_event_${cityKey}_${venueKey}_${eventKey}`, `session_scan_event_${cityKey}_${venueKey}_${eventKey}`)
           }
@@ -502,6 +518,7 @@ export default {
       }
 
       const keyValues = await Promise.all(keys.map((key) => env.RUFF_KV.get(key)))
+
       const lookup = Object.fromEntries(
         keys.map((key, i) => [key, parseInt(keyValues[i] || "0", 10)])
       )
@@ -516,6 +533,7 @@ export default {
           stats.allTime.venueCounts[venueCounterKey] = {
             count: lookup[`all_scan_venue_${cityKey}_${venueKey}`] || 0
           }
+
           stats.session.venueCounts[venueCounterKey] = {
             count: lookup[`session_scan_venue_${cityKey}_${venueKey}`] || 0
           }
@@ -526,6 +544,7 @@ export default {
             stats.allTime.eventCounts[eventCounterKey] = {
               count: lookup[`all_scan_event_${cityKey}_${venueKey}_${eventKey}`] || 0
             }
+
             stats.session.eventCounts[eventCounterKey] = {
               count: lookup[`session_scan_event_${cityKey}_${venueKey}_${eventKey}`] || 0
             }
@@ -556,9 +575,11 @@ export default {
       }
 
       lines.push("", "By venue:")
+
       for (const [cityKey, city] of Object.entries(config)) {
         for (const [venueKey, venue] of Object.entries(city.venues)) {
           const key = `${cityKey}_${venueKey}`
+
           lines.push(
             `${venue.emoji} ${city.label} → ${venue.label}: all-time ${stats.allTime.venueCounts[key]?.count || 0} | session ${stats.session.venueCounts[key]?.count || 0}`
           )
@@ -566,10 +587,12 @@ export default {
       }
 
       lines.push("", "By event:")
+
       for (const [cityKey, city] of Object.entries(config)) {
         for (const [venueKey, venue] of Object.entries(city.venues)) {
           for (const [eventKey, event] of Object.entries(venue.events)) {
             const key = `${cityKey}_${venueKey}_${eventKey}`
+
             lines.push(
               `${event.emoji} ${city.label} → ${venue.label} → ${event.label}: all-time ${stats.allTime.eventCounts[key]?.count || 0} | session ${stats.session.eventCounts[key]?.count || 0}`
             )
@@ -595,6 +618,7 @@ export default {
       lines.push("CITY")
       lines.push(`${pad("Name", 22)} ${pad("All", 6)} ${pad("Session", 7)}`)
       lines.push(`${"-".repeat(22)} ${"-".repeat(6)} ${"-".repeat(7)}`)
+
       for (const [cityKey, city] of Object.entries(config)) {
         lines.push(
           `${pad(`${city.emoji} ${city.label}`, 22)} ${pad(stats.allTime.cityCounts[cityKey] || 0, 6)} ${pad(stats.session.cityCounts[cityKey] || 0, 7)}`
@@ -605,9 +629,11 @@ export default {
       lines.push("VENUE")
       lines.push(`${pad("Venue", 34)} ${pad("All", 6)} ${pad("Session", 7)}`)
       lines.push(`${"-".repeat(34)} ${"-".repeat(6)} ${"-".repeat(7)}`)
+
       for (const [cityKey, city] of Object.entries(config)) {
         for (const [venueKey, venue] of Object.entries(city.venues)) {
           const key = `${cityKey}_${venueKey}`
+
           lines.push(
             `${pad(`${venue.emoji} ${city.label} → ${venue.label}`, 34)} ${pad(stats.allTime.venueCounts[key]?.count || 0, 6)} ${pad(stats.session.venueCounts[key]?.count || 0, 7)}`
           )
@@ -618,10 +644,12 @@ export default {
       lines.push("EVENT")
       lines.push(`${pad("Event", 46)} ${pad("All", 6)} ${pad("Session", 7)}`)
       lines.push(`${"-".repeat(46)} ${"-".repeat(6)} ${"-".repeat(7)}`)
+
       for (const [cityKey, city] of Object.entries(config)) {
         for (const [venueKey, venue] of Object.entries(city.venues)) {
           for (const [eventKey, event] of Object.entries(venue.events)) {
             const key = `${cityKey}_${venueKey}_${eventKey}`
+
             lines.push(
               `${pad(`${event.emoji} ${city.label} → ${venue.label} → ${event.label}`, 46)} ${pad(stats.allTime.eventCounts[key]?.count || 0, 6)} ${pad(stats.session.eventCounts[key]?.count || 0, 7)}`
             )
@@ -637,8 +665,10 @@ export default {
 
       for (const [cityKey, city] of Object.entries(config)) {
         puts.push(env.RUFF_KV.put(`session_scan_city_${cityKey}`, "0"))
+
         for (const [venueKey, venue] of Object.entries(city.venues)) {
           puts.push(env.RUFF_KV.put(`session_scan_venue_${cityKey}_${venueKey}`, "0"))
+
           for (const [eventKey] of Object.entries(venue.events)) {
             puts.push(env.RUFF_KV.put(`session_scan_event_${cityKey}_${venueKey}_${eventKey}`, "0"))
           }
@@ -691,17 +721,17 @@ export default {
           }
         } else if (callbackData === "set:fallback") {
           const saved = await saveFallbackSelection()
-          if (callbackChatId && callbackMessageId) {
+
+          if (saved && callbackChatId && callbackMessageId) {
             await renderSavedSelection(
               callbackChatId,
               callbackMessageId,
-              "✅ Ruff beacon updated\n\n" +
-                `Redirect:\n${saved.currentUrl}\n\n` +
-                `${saved.currentLabel}`
+              selectionSavedText(saved.city, saved.venue, saved.event, saved.label)
             )
           }
         } else if (callbackData.startsWith("city:")) {
           const [, cityKey] = callbackData.split(":")
+
           if (getCity(cityKey) && callbackChatId && callbackMessageId) {
             await editMessage(
               callbackChatId,
@@ -712,6 +742,7 @@ export default {
           }
         } else if (callbackData.startsWith("venue:")) {
           const [, cityKey, venueKey] = callbackData.split(":")
+
           if (getVenue(cityKey, venueKey) && callbackChatId && callbackMessageId) {
             await editMessage(
               callbackChatId,
@@ -722,6 +753,7 @@ export default {
           }
         } else if (callbackData.startsWith("nav:venues:")) {
           const [, , cityKey] = callbackData.split(":")
+
           if (getCity(cityKey) && callbackChatId && callbackMessageId) {
             await editMessage(
               callbackChatId,
@@ -743,6 +775,7 @@ export default {
           }
         } else if (callbackData === "show_counts") {
           const stats = await getStatsData()
+
           if (callbackChatId) {
             await sendMessage(callbackChatId, buildStatsTable(stats), undefined, "HTML")
           }
@@ -758,6 +791,7 @@ export default {
           }
         } else if (callbackData === "reset_counts_confirm") {
           await resetSessionCounts()
+
           if (callbackChatId) {
             await sendMessage(callbackChatId, "🧹 Session counters reset to 0. All-time counters were kept.")
           }
@@ -767,11 +801,13 @@ export default {
 
         if (callbackId) {
           let callbackText = "🐾 Updated"
+
           if (callbackData === "set:fallback") callbackText = "🐾 Fallback selected"
           if (callbackData === "show_counts") callbackText = "📊 Displaying stats"
           if (callbackData === "reset_counts_prompt") callbackText = "⚠️ Confirm reset in chat"
           if (callbackData === "reset_counts_confirm") callbackText = "🧹 Session reset"
           if (callbackData === "reset_counts_cancel") callbackText = "Reset canceled"
+
           await answerCallback(callbackId, callbackText)
         }
 
@@ -801,6 +837,7 @@ export default {
             `URL:\n${current.currentUrl}\n\n` +
             `Last scan (Zulu): ${lastScanAt || "None"}`
         )
+
         return new Response("ok")
       }
 
@@ -814,6 +851,7 @@ export default {
           chatId,
           `🐾 Ruff Scan Totals\n\nAll-time: ${parseInt(allTotalRaw || "0", 10)}\nSession: ${parseInt(sessionTotalRaw || "0", 10)}`
         )
+
         return new Response("ok")
       }
 
@@ -831,6 +869,7 @@ export default {
             "All-time counters will remain unchanged.",
           replyKeyboards.resetConfirm
         )
+
         return new Response("ok")
       }
 
