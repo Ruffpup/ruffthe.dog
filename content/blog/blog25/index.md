@@ -2,7 +2,7 @@
 title: "The Pieces We Leave Behind"
 subtitle: "Alaska, tiny corgis, old family stories, and the connections that stay with us."
 summary: "A reflection on Alaska, family legacy, newfound freedom, unexpected community, and the small pieces of ourselves we leave behind in the lives of others."
-date: 2026-06-13
+date: 2026-06-11
 cardimage: blog25_card.jpeg
 featureimage: blog25.jpeg
 caption: "Some stories aren't meant to stay with us. They're meant to continue."
