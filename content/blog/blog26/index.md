@@ -2,7 +2,7 @@
 title: "A Better Mirror"
 subtitle: "Sometimes the people who care about us can see things we can't."
 summary: "A reflection on a weekend in London, old photographs, unexpected lessons from a beard punishment, and learning to trust the way others see us."
-date: 2026-06-20
+date: 2026-06-19
 cardimage: blog26_card.jpeg
 featureimage: blog26.jpeg
 caption: "Sometimes the people who know us best become a better mirror."
