@@ -1,2 +1,2 @@
 export const WORKER_VERSION = "1.1.0";
-export const DEPLOYED_AT = "2026-06-09T23:07:42.706Z";
+export const DEPLOYED_AT = "2026-07-10T17:43:08.002Z";

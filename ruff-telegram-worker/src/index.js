@@ -50,6 +50,11 @@ export default {
                 label: "BLUF Night",
                 emoji: "🪖",
                 url: "https://ruffthe.dog/places/atlanta/atleagle/bluf-night/"
+              },
+              kds_gearnight: {
+                label: "KDS and Gear Night",
+                emoji: "🔥",
+                url: "https://ruffthe.dog/places/atlanta/atleagle/kds_gear_night/"
               }
             }
           },
