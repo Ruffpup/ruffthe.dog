@@ -3,7 +3,7 @@
 type: misc
 
 # change these
-jobTitle: Puppy
+jobTitle: 2026 Georgia Pup Candidate
 name: Ruff
 bio: true
 icon: ":dog:"
