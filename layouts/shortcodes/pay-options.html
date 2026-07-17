@@ -1,0 +1,231 @@
+<section class="ruff-pay" aria-label="Payment options">
+  <div class="ruff-pay__grid">
+    <a
+      class="ruff-pay__option ruff-pay__option--apple"
+      href="sms:+18017263569"
+      aria-label="Open Messages to send Ruff Apple Cash"
+    >
+      <span class="ruff-pay__name">Apple Cash</span>
+      <span class="ruff-pay__detail">Opens Messages</span>
+    </a>
+
+    <a
+      class="ruff-pay__option ruff-pay__option--venmo"
+      href="https://venmo.com/code?user_id=2659320621694976857"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Open Ruff's Venmo profile"
+    >
+      <span class="ruff-pay__name">Venmo</span>
+      <span class="ruff-pay__detail">Open profile</span>
+    </a>
+
+    <a
+      class="ruff-pay__option ruff-pay__option--cashapp"
+      href="https://cash.app/$creig"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Open Ruff's Cash App profile"
+    >
+      <span class="ruff-pay__name">Cash App</span>
+      <span class="ruff-pay__detail">$creig</span>
+    </a>
+
+    <button
+      class="ruff-pay__option ruff-pay__option--zelle"
+      type="button"
+      data-copy-zelle="woof@ruffthe.dog"
+      aria-describedby="ruff-pay-copy-status"
+    >
+      <span class="ruff-pay__name">Zelle</span>
+      <span class="ruff-pay__detail">Copy payment email</span>
+    </button>
+  </div>
+
+  <p id="ruff-pay-copy-status" class="ruff-pay__status" aria-live="polite"></p>
+
+  <details class="ruff-pay__zelle-card">
+    <summary>View or save the Zelle QR code</summary>
+    <div class="ruff-pay__zelle-content">
+      <img
+        src="/images/pay/zelle-creig.jpeg"
+        alt="Zelle QR code for Creig Nielson at woof@ruffthe.dog"
+        width="1048"
+        height="1275"
+        loading="lazy"
+      >
+      <p>
+        If you are using the same phone, copy
+        <strong>woof@ruffthe.dog</strong> and paste it into Zelle through your bank or credit union.
+      </p>
+    </div>
+  </details>
+</section>
+
+<style>
+  .ruff-pay {
+    --ruff-pay-border: rgba(127, 127, 127, 0.28);
+    --ruff-pay-surface: rgba(127, 127, 127, 0.06);
+    margin: 2rem 0;
+  }
+
+  .ruff-pay__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
+
+  .ruff-pay__option {
+    appearance: none;
+    display: flex;
+    min-height: 6.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1.15rem;
+    border: 1px solid var(--ruff-pay-border);
+    border-top: 0.32rem solid var(--ruff-pay-accent, currentColor);
+    border-radius: 1rem;
+    background: var(--ruff-pay-surface);
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 150ms ease, border-color 150ms ease, background-color 150ms ease;
+  }
+
+  .ruff-pay__option:hover {
+    transform: translateY(-2px);
+    border-color: var(--ruff-pay-accent, currentColor);
+    background: rgba(127, 127, 127, 0.11);
+    text-decoration: none;
+  }
+
+  .ruff-pay__option:focus-visible,
+  .ruff-pay__zelle-card summary:focus-visible {
+    outline: 3px solid var(--ruff-pay-accent, #7c3aed);
+    outline-offset: 3px;
+  }
+
+  .ruff-pay__option--apple {
+    --ruff-pay-accent: #111111;
+  }
+
+  .ruff-pay__option--venmo {
+    --ruff-pay-accent: #008cff;
+  }
+
+  .ruff-pay__option--cashapp {
+    --ruff-pay-accent: #00b84a;
+  }
+
+  .ruff-pay__option--zelle {
+    --ruff-pay-accent: #6d1ed4;
+  }
+
+  .ruff-pay__name {
+    font-size: 1.2rem;
+    font-weight: 750;
+    line-height: 1.2;
+  }
+
+  .ruff-pay__detail {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    opacity: 0.72;
+  }
+
+  .ruff-pay__status {
+    min-height: 1.5rem;
+    margin: 0.6rem 0 0;
+    font-size: 0.9rem;
+    font-weight: 650;
+  }
+
+  .ruff-pay__zelle-card {
+    margin-top: 0.5rem;
+    border: 1px solid var(--ruff-pay-border);
+    border-radius: 1rem;
+    background: var(--ruff-pay-surface);
+  }
+
+  .ruff-pay__zelle-card summary {
+    padding: 1rem 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .ruff-pay__zelle-content {
+    padding: 0 1.15rem 1.15rem;
+  }
+
+  .ruff-pay__zelle-content img {
+    display: block;
+    width: min(100%, 27rem);
+    height: auto;
+    margin: 0 auto 1rem;
+    border-radius: 0.85rem;
+    background: #ffffff;
+  }
+
+  .ruff-pay__zelle-content p {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 36rem) {
+    .ruff-pay__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ruff-pay__option {
+      min-height: 5.4rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ruff-pay__option {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const button = document.querySelector("[data-copy-zelle]")
+    const status = document.querySelector("#ruff-pay-copy-status")
+
+    if (!button || !status || button.dataset.copyReady === "true") return
+    button.dataset.copyReady = "true"
+
+    const fallbackCopy = (value) => {
+      const input = document.createElement("textarea")
+      input.value = value
+      input.setAttribute("readonly", "")
+      input.style.position = "fixed"
+      input.style.opacity = "0"
+      document.body.appendChild(input)
+      input.select()
+      const copied = document.execCommand("copy")
+      input.remove()
+      return copied
+    }
+
+    button.addEventListener("click", async () => {
+      const value = button.dataset.copyZelle
+
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(value)
+        } else if (!fallbackCopy(value)) {
+          throw new Error("Copy unavailable")
+        }
+
+        status.textContent = "Copied woof@ruffthe.dog — paste it into Zelle."
+      } catch (error) {
+        status.textContent = "Copy was unavailable. Use woof@ruffthe.dog in Zelle."
+      }
+    })
+  })()
+</script>
