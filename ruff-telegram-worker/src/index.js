@@ -263,7 +263,7 @@ export default {
               general: {
                 label: "General",
                 emoji: "🌙",
-                url: "https://ruffthe.dog/places/saltlakecity/club-try-angles/"
+                url: "https://ruffthe.dog/places/saltlakecity/tryangles/generic/"
               }
             }
           }

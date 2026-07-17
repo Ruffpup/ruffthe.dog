@@ -7,7 +7,7 @@ jobTitle: Puppy
 name: Ruff
 bio: true
 icon: ":rainbow_flag:"
-slug: 'club-try-angles'
+slug: 'generic'
 ---
 
 # You Met Ruff at Club Try-Angles 🌈
