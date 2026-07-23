@@ -55,6 +55,11 @@ export default {
                 label: "KDS and Gear Night",
                 emoji: "🔥",
                 url: "https://ruffthe.dog/places/atlanta/atleagle/kds_gear_night/"
+              },
+              atl_leather_pride: {
+                label: "ALP",
+                emoji: "🥾",
+                url: "https://ruffthe.dog/places/atlanta/atleagle/atlantaleatherpride/"
               }
             }
           },
