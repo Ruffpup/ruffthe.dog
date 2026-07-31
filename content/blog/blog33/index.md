@@ -2,7 +2,7 @@
 title: "The Dog Who Taught Me How to Be a Better Puppy"
 subtitle: "Sometimes the best lessons about authenticity come from someone who never had to question who they were."
 summary: "Harry has no interest in productivity, perfection, or pretending to be anything other than himself. Watching him over the years has reminded me that joy doesn't need permission, love doesn't keep score, and there has never been a single 'correct' way to be a puppy. Sometimes the best lessons about authenticity come from the ones who never had to search for it in the first place."
-date: 2026-08-01
+date: 2026-07-31
 cardimage: blog33_card.jpeg
 featureimage: blog33.jpeg
 caption: "Dogs never forget how to be themselves. Maybe that's what we've been trying to rediscover all along."
