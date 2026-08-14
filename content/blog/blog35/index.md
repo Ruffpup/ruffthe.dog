@@ -2,7 +2,7 @@
 title: "Kuma & Ruff Do America"
 subtitle: "Sometimes the greatest adventure isn't showing someone your country. It's inviting them into your everyday life."
 summary: "For nine months, Kuma welcomed Ruff into his everyday world in London. Now it's Ruff's turn. From a familiar bus stop in Worcester Park to Buc-ee's, Georgia Pet and Handler, Harry the corgi, and everything in between, this isn't really a story about America. It's a story about what happens when two lives finally become one shared adventure."
-date: 2026-08-15
+date: 2026-08-14
 cardimage: blog35_card.jpeg
 featureimage: blog35.jpeg
 caption: "The journey starts at the same bus stop where every goodbye once began."
