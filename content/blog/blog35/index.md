@@ -7,7 +7,7 @@ cardimage: blog35_card.jpeg
 featureimage: blog35.jpeg
 caption: "The journey starts at the same bus stop where every goodbye once began."
 slug: "kuma-and-ruff-do-america"
-alt: "Ruff and Kuma standing together at a suburban London bus stop with luggage, smiling as an arriving bus marks the beginning of their journey from Worcester Park to America together."
+alt: ""
 tags:
   - kuma
   - travel
