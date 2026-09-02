@@ -1,0 +1,14 @@
+.booking-link a {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border: 2px solid #e67e22;
+  border-radius: 0.4rem;
+  color: #e67e22;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.booking-link a:hover {
+  background: #e67e22;
+  color: #ffffff;
+}
