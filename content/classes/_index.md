@@ -5,4 +5,8 @@ Ruff’s classes are built around practical skills, lived experience, safety, co
 
 Classes are designed to meet people where they are—whether you’re brand new, experienced, curious, nervous, or just here to wag and learn. Expect useful information, plenty of opportunities for questions, and probably a little Chaos Corgi energy along the way.
 
+*Select any class below for the full description, learning objectives, and audience information.*
+
+Classes can be adapted for different audiences, experience levels, and event formats, including 60- and 90-minute sessions.
+
 **Interested in bringing Ruff to your event? 🐾 [GET IN TOUCH](mailto:woof@ruffthe.dog?subject=Booking%20Inquiry) 🐾**
