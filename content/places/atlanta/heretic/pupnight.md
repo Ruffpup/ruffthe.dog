@@ -22,12 +22,6 @@ And yes, that moment where people look back and forth between my hand and their 
 
 Welcome to **Pup Night at The Heretic in Atlanta.**
 
-> 🐾 I'm currently running for Georgia Pup 2026.
->
-> Learn more about my platform and journey:
->
-> https://ruffthe.dog/blog/running-for-georgia-pup-2026/
-
 ## What is Pup Night?
 
 Pup Night at the Heretic is one of Atlanta’s regular gathering spots for the pup community.

@@ -22,12 +22,6 @@ And yes, that moment where people look back and forth between my hand and their 
 
 Welcome to **Pup Tea at the Atlanta Eagle.**
 
-> 🐾 I'm currently running for Georgia Pup 2026.
->
-> Learn more about my platform and journey:
->
-> https://ruffthe.dog/blog/running-for-georgia-pup-2026/
-
 ## What is Pup Tea?
 
 Pup Tea is one of Atlanta’s most relaxed and welcoming pup gatherings.

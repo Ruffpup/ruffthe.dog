@@ -23,12 +23,6 @@ And yes, people usually look at their phone and then back at my hand a few times
 
 Welcome to Ruff’s corner of the internet.
 
-> 🐾 I'm currently running for Georgia Pup 2026.
->
-> Learn more about my platform and journey:
->
-> https://ruffthe.dog/blog/running-for-georgia-pup-2026/
-
 ## Ruff in London
 
 Atlanta may be my home base, but London has become one of the communities that feels like a second home.

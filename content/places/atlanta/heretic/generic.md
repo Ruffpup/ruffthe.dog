@@ -23,12 +23,6 @@ No, you’re not the first person tonight to look confused when it worked.
 
 Welcome to Ruff’s little corner of the internet.
 
-> 🐾 I'm currently running for Georgia Pup 2026.
->
-> Learn more about my platform and journey:
->
-> https://ruffthe.dog/blog/running-for-georgia-pup-2026/
-
 ## So… who is Ruff?
 
 Ruff is the chaos corgi behind **[ruffthe.dog](https://ruffthe.dog)**.

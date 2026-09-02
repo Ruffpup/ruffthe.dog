@@ -47,12 +47,6 @@ Part pup, part traveler, part educator, and part curious human who enjoys blurri
 
 Over the past year, I've been fortunate to build friendships and community on both sides of the Atlantic. One of the things I love most is discovering how quickly strangers become friends when people are willing to say hello.
 
-> 🐾 Curious about what I'm working on these days?
->
-> I'm currently running for Georgia Pup 2026:
->
-> https://ruffthe.dog/blog/running-for-georgia-pup-2026/
-
 ## Why Does My Hand Scan?
 
 Because meeting someone should be memorable.

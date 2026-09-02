@@ -35,10 +35,6 @@ I'm one of the contestants in the **2026 Georgia Pet & Handler Contest** taking 
 
 Thank you for taking a moment to stop by, and thank you for supporting the contestants who put themselves out there to share their stories, passions, and love for this community.
 
-> 🐾 Learn more about my Georgia Pup 2026 campaign and platform:
->
-> https://ruffthe.dog/blog/running-for-georgia-pup-2026/
-
 Now, back to the important question...
 
 How did my hand just open a website on your phone?

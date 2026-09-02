@@ -22,10 +22,6 @@ And yes, the moment where people look back and forth between my hand and their p
 
 Welcome to BLUF Night at the Atlanta Eagle.
 
-> 🐾 Curious about Ruff? I'm currently running for Georgia Pup 2026.
->
-> https://ruffthe.dog/blog/running-for-georgia-pup-2026/
-
 ## What is BLUF Night?
 
 BLUF stands for **Breeches and Leather Uniform Fanclub**.

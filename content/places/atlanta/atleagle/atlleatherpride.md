@@ -22,12 +22,6 @@ And yes, watching people realize my business card is literally implanted in my h
 
 Welcome to **Atlanta Leather Pride.**
 
-> 🐾 I'm currently running for Georgia Pup 2026.
->
-> Learn more about my platform and journey:
->
-> https://ruffthe.dog/blog/running-for-georgia-pup-2026/
-
 ## Welcome to Atlanta Leather Pride
 
 Whether this is your very first leather event or you've been attending for decades, I'm glad our paths crossed.
