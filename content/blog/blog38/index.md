@@ -3,8 +3,8 @@ title: "Goodbye, for Now"
 subtitle: "An ocean between us doesn’t make saying goodbye any easier, but it does make every moment together matter more."
 summary: "After two weeks together in Atlanta and Augusta, saying goodbye to Kuma reminded me that distance may hurt, but the bond between us continues to grow stronger."
 date: 2026-09-04
-#cardimage: blog38_card.jpeg
-#featureimage: blog38.jpeg
+cardimage: blog38_card.jpeg
+featureimage: blog38.jpeg
 caption: "Goodbyes never seem to get easier, even when you know they’re only for now."
 slug: "goodbye-for-now"
 alt: "Ruff reflecting on saying goodbye after spending two weeks with Kuma in the United States."
