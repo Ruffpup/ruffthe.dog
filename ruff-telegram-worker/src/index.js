@@ -67,7 +67,7 @@ export default {
               black_and_blue: {
                 label: "Black & Blue",
                 emoji: "💙",
-                url: "https://ruffthe.dog/places/atlanta/atleagle/sebbblackandblue/"
+                url: "https://ruffthe.dog/places/atlanta/atleagle/sebb/"
               }
             }
           },
