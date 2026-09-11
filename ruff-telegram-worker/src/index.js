@@ -63,6 +63,11 @@ export default {
                 label: "ALP",
                 emoji: "🥾",
                 url: "https://ruffthe.dog/places/atlanta/atleagle/atlantaleatherpride/"
+              },
+              black_and_blue: {
+                label: "Black & Blue",
+                emoji: "💙",
+                url: "https://ruffthe.dog/places/atlanta/atleagle/sebb_blackandblue/"
               }
             }
           },
