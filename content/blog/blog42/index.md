@@ -3,8 +3,8 @@ title: "Kink is funnier than people think"
 subtitle: "What laughter, mistakes, and unexpected emotions teach us about trust in kink"
 summary: "Real kink is rarely flawless. The pauses, mistakes, check-ins, and emotional releases can be the moments that make play safer, more intimate, and more trusting."
 date: 2026-09-27
-#cardimage: blog40_card.jpeg
-#featureimage: blog40.jpeg
+cardimage: blog42_card.jpeg
+featureimage: blog42.jpeg
 caption: "Laughter, honest check-ins, and the freedom to pause can turn unexpected moments into deeper trust."
 slug: "kink-is-funnier-than-people-think"
 alt: "Two kink partners sharing a lighthearted moment during a consensual play scene."
