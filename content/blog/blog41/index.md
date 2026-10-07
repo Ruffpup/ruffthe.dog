@@ -6,7 +6,7 @@ date: 2026-10-02
 cardimage: blog41_card.jpeg
 featureimage: blog41.jpeg
 caption: "Pups and handlers move together as a playful pack, creating visibility, connection, and belonging."
-slug: "let-them-sniff-the-pride-play-and-pack-spirit-of-puppy-walks"
+slug: "let-them-sniff"
 alt: "Pups and handlers walking together in pet-play gear during a public puppy walk."
 tags:
   - pup play
