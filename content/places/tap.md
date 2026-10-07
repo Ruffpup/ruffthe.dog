@@ -27,10 +27,6 @@ Then check their phone again.
 
 Welcome to Ruff’s little corner of the internet.
 
-> 🐾 **New here?** I'm currently running for Georgia Pup 2026. You can read more about my platform and journey here:
->
-> https://ruffthe.dog/blog/running-for-georgia-pup-2026/
-
 ## Wait… who is Ruff?
 
 Ruff is the chaos corgi behind **[ruffthe.dog](https://ruffthe.dog)**.
