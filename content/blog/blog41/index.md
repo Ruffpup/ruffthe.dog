@@ -3,8 +3,8 @@ title: "Let Them Sniff: The Pride, Play, and Pack Spirit of Puppy Walks"
 subtitle: "How puppy walks turn playful headspace, public visibility, and shared movement into connection, confidence, and community."
 summary: "Puppy walks bring pups, pets, handlers, and friends together to play, build connections, and celebrate pet play while encouraging consent, preparation, and responsible public visibility."
 date: 2026-10-02
-#cardimage: blog41_card.jpeg
-#featureimage: blog41.jpeg
+cardimage: blog41_card.jpeg
+featureimage: blog41.jpeg
 caption: "Pups and handlers move together as a playful pack, creating visibility, connection, and belonging."
 slug: "let-them-sniff-the-pride-play-and-pack-spirit-of-puppy-walks"
 alt: "Pups and handlers walking together in pet-play gear during a public puppy walk."
