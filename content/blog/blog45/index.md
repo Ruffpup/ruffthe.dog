@@ -7,7 +7,7 @@ cardimage: blog45_card.jpeg
 featureimage: blog45.jpeg
 caption: "The work starts long before the contest—and continues after the sashes are awarded."
 slug: "so-you-want-to-be-a-titleholder"
-alt: "2026 Georgia Pet, Pup and Handler class photo. BAckstage at the contest"
+alt: "2026 Georgia Pet, Pup and Handler class photo. Backstage at the contest"
 tags:
   - kink
   - pet play
