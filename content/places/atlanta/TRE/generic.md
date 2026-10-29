@@ -1,4 +1,3 @@
-```markdown
 ---
 # don't change
 type: misc
