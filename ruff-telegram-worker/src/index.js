@@ -71,7 +71,18 @@ export default {
               }
             }
           },
-
+           tre: {
+            label: "River's Edge",
+            emoji: "🦅",
+            type: "camp",
+            events: {
+              general: {
+                label: "General",
+                emoji: "🌙",
+                url: "https://ruffthe.dog/places/atlanta/tre/tre/"
+                 }
+                }
+              },
           heretic: {
             label: "Heretic",
             emoji: "🔥",
