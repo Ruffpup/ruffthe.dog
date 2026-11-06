@@ -2,7 +2,7 @@
 title: "37 Tabs Open, and One Is Playing Music"
 subtitle: "Closing a few tabs, finding my headspace, and letting this chaos corgi dance."
 summary: "A Halloween weekend at camp gives Ruff a chance to recharge, reflect on the tabs open in his life, and make room for Harry, friends, and the music that keeps him grounded."
-date: 2026-11-6
+date: 2026-11-06
 cardimage: blog47_card.jpeg
 featureimage: blog47.jpeg
 caption: "Some tabs can wait. The music stays on."
