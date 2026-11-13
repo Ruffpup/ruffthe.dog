@@ -22,6 +22,8 @@ And yes, that moment where people look back and forth between my hand and their 
 
 Welcome.
 
+![Ruff at The Eagle](/assets/ruff-atlanta-eagle.jpeg)
+
 > 🐾 I'm currently running for Georgia Pup 2026.
 >
 > Learn more about my platform and journey:
