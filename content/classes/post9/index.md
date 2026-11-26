@@ -1,7 +1,7 @@
 ---
 title: "Chaos Corgi Energy: Permission to Be Playful Again"
 #subtitle: ""
-summary: "An experiential workshop on moving out of your head and into playful, instinctive connection through awareness, movement, and low pressure interaction."
+summary: Move out of your head and into playful, instinctive connection through awareness, movement, and low-pressure interaction. **Virtual option available.**
 date: 2026-04-20
 cardimage: photo9_card.jpeg
 featureimage: photo9.jpeg

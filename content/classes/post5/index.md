@@ -1,7 +1,7 @@
 ---
 title: "Wrapped, Trapped, & Wagging: Mumification 101"
 #subtitle: "More Than a Kink — A Way Back to Play"
-summary: "Mumification 101 explores the art of safely wrapping your pup or sub for deep surrender and stillness. Learn materials like Vet Wrap, plastic wrap, and tape, essential safety tools, extraction techniques, and aftercare—taught the Ruff Pup way: playful, intentional, and consent-forward."
+summary: Explore mummification through safe wrapping, material selection, extraction, and aftercare—with a playful, intentional, and consent-forward approach. 
 date: 2026-01-31
 cardimage: photo5_card.jpeg
 featureimage: photo5.jpeg

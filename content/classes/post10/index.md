@@ -1,7 +1,7 @@
 ---
 title: "Chaos Corgi's Gunge Lab"
 #subtitle: ""
-summary: "A beginner-friendly introduction to gunge and messy play exploring sensory experiences, scene design, safety, consent, and the joy of getting gloriously messy on purpose."
+summary: Explore gunge and messy play through sensory experiences, scene design, safety, and consent in this beginner-friendly introduction. 
 date: 2026-06-17
 cardimage: photo10_card.jpeg
 featureimage: photo10.jpeg
