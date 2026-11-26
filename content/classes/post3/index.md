@@ -1,6 +1,6 @@
 ---
 title: Boardroom BDSM
-summary: This workshop explores how non-sexual principles from BDSM culture can be thoughtfully and ethically translated into professional environments. Participants will examine how consent-based communication, explicit boundaries, role clarity, and care-forward leadership can improve collaboration, accountability, and sustainability at work.
+summary: Explore how non-sexual BDSM principles—consent, clear boundaries, role clarity, and care—can strengthen workplace collaboration and leadership. **Virtual option available**.
 date: 2026-01-21
 cardimage: photo3_card.jpeg
 featureimage: photo3.jpeg
