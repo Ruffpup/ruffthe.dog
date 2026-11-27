@@ -1,7 +1,7 @@
 ---
 title: "Carry-On Pup: Navigating Gear, Airports, and Global Pup Scenes"
 #subtitle: "More Than a Kink — A Way Back to Play"
-summary: "A practical workshop on traveling with pup gear, navigating airport security, and connecting with pup communities around the world."
+summary: "A practical workshop on traveling with pup gear, navigating airport security, and connecting with pup communities around the world.**Virtual Option Available**"
 date: 2026-03-27
 cardimage: photo8_card.jpeg
 featureimage: photo8.jpeg

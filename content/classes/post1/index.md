@@ -1,7 +1,7 @@
 ---
 title: Pup Gear Care 101
 subtitle: "Keep your kit clean, safe, and ready for play ⚡"
-summary: "A hands-on, shame-free workshop on cleaning and maintaining pup gear. Learn practical techniques to extend the life of your gear from an expert with 20 years of experience."
+summary: "A hands-on, shame-free workshop on cleaning and maintaining pup gear to help it last longer."
 date: 2026-01-20
 cardimage: photo1_card.jpg
 featureimage: photo1.jpg

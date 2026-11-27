@@ -1,7 +1,7 @@
 ---
 title: "Playing Smart: Safety in Kink"
 #subtitle: "More Than a Kink — A Way Back to Play"
-summary: "A practical workshop on physical and mental safety in kink scenes, covering risk awareness, negotiation, recognizing warning signs, and responding when things go wrong."
+summary: Explore physical and mental safety in kink scenes, including risk awareness, negotiation, warning signs, and responding when things go wrong. **Virtual option available.**
 date: 2026-03-26
 cardimage: photo7_card.jpeg
 featureimage: photo7.jpeg
